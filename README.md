@@ -1,21 +1,14 @@
 
-# A Practical Workflow for Data Science Projects
+# DS105L Team Project - Data Detectives 🕵
 
-This project is intended as a template structure for data science projects. Its main intended use is for teams within organizations but we see no reason why you would not benefit from it even if you are coding solo, participating in a data hackathon or are in an academic group, doing exploratory, statistical analysis or algorithm modelling.
+This is the team project for the team "Data Detectives" for the DS105L Lent Term. The goal of the project is to use county panel data to understand the relationship between indicators of years of experience and education and measures of welfares in counties in the United States using census data.
 
-This is a standalone **template project** that can be used as a starting point for any data science project. It is not a framework, a library, or a package. It is a template that you can use to start your own project. It is not intended to be a one-size-fits-all solution, but rather a starting point for you to build your own project structure.
+# 👥 **Team** (in alphabetical order)
 
-_If you like this project, please consider giving it a ⭐️!_
-
-# 👥 **Team**
-
-- [Jon](http://github.com/jonjoncardoso) as the core developer
-
-**People who have contributed to this course in the past:**
-
-- [Karina Moura](https://github.com/kvmoura). _A stellar project manager!_
-- [Natalia Del Coco](https://github.com/NataliaDelCoco). _She is taking her van to the mountains for a while._
-- [Sara Luxmoore](https://github.com/SaraLuxmoore). _She can be seen doing cool research-related stuff in Italy these days._
+- [Alberto](https://github.com/amartino1-lse) [TO-DO]
+- [Alua](https://github.com/atelemtayeva) [TO-DO]
+- [Leo](https://github.com/leomassoc) [TO-DO]
+- [Seyi](https://github.com/missingaccount) [TO-DO, add also username]
 
 # Initial repository setup
 
