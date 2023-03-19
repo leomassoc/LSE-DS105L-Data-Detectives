@@ -1,0 +1,21 @@
+# Regular DS stuff
+numpy==1.24.2
+scipy==1.10.0
+pandas==1.5.3
+
+# Web scraping/APIs
+requests==2.28.2
+beautifulsoup4==4.11.2
+
+# Visualization
+matplotlib==3.7.0
+plotnine==0.10.1 # Python version of ggplot2
+networkx>=2
+
+# Stuff VSCode needs
+ipykernel==6.21.2
+jupyterlab==3.6.1
+
+
+# Your custom packages
+./src/python/
