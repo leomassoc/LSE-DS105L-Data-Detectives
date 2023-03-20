@@ -8,7 +8,7 @@ This is the team project for the team "Data Detectives" for the DS105L Lent Term
 - [Alberto](https://github.com/amartino1-lse) [TO-DO]
 - [Alua](https://github.com/atelemtayeva) [TO-DO]
 - [Leo](https://github.com/leomassoc) [TO-DO]
-- [Seyi](https://github.com/missingaccount) [TO-DO, add also username]
+- [Seyi](https://github.com/seyiojolse) [TO-DO, add also username]
 
 # Initial repository setup
 
