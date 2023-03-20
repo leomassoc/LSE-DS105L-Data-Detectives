@@ -1,7 +1,7 @@
 
 # DS105L Team Project - Data Detectives 🕵
 
-This is the team project for the team "Data Detectives" for the DS105L Lent Term. The goal of the project is to use county panel data to understand the relationship between indicators of years of experience and education and measures of welfares in counties in the United States using census data.
+This is the team project for the team "Data Detectives" for the DS105L Lent Term. The goal of the project is to use county panel data to understand the relationship between indicators of years of experience and education and measures of welfare in counties in the United States using census data.
 
 # 👥 **Team** (in alphabetical order)
 
