@@ -5,10 +5,10 @@ This is the team project for the team "Data Detectives" for the DS105L Lent Term
 
 # 👥 **Team** (in alphabetical order)
 
-- [Alberto](https://github.com/amartino1-lse) [TO-DO]
-- [Alua](https://github.com/atelemtayeva) [TO-DO]
-- [Leo](https://github.com/leomassoc) [TO-DO]
-- [Seyi](https://github.com/seyiojolse) [TO-DO, add also username]
+- [Alberto](https://github.com/amartino1-lse) mainly focused on data wrangling
+- [Alua](https://github.com/atelemtayeva) prepared the report and data visualisation
+- [Leo](https://github.com/leomassoc) collected API data and worked on data cleaning
+- [Seyi](https://github.com/seyiojolse) worked on data visualisation
 
 # Initial repository setup
 
