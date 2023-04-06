@@ -71,7 +71,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+#docs/_build/
 
 # PyBuilder
 target/
@@ -174,7 +174,7 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+#docs/
 
 # translation temp files
 po/*~
