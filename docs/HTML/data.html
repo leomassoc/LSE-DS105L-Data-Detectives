@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Website</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      display: inline-block;
+      padding: 10px;
+      color: #fff;
+    }
+
+    /* Main content */
+    main {
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Website</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#project-description.html">Project Description</a></li>
+      <li><a href="#data.html">Data</a></li>     
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
+      <li><a href="conclusions.html">Conclusions</a></li>
+      <li><a href="authors.html">Authors</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section>
+      <h2>Data</h2>
+      <p>
+        For the purpose of conducting our project, we refer to the data from <strong>Census.Gov</strong> that provides information on educational levels, educational institutions, and salaries in U.S. counties. First, educational levels represent the percentage of people above 25 years old with a Bachelor's degree. Then, from the "Firms" API, we were able to retrieve the number of educational centers per county. Lastly, we used an Excel file from the Economic Bureau to retrieve GDP per county, representative of our salary data. From the Census database, we have chosen two datasets – the Economic Census Survey (ECS) and the American Community Survey (ACS) – containing our variables of interest.
+      </p>
+      <p>
+        Data Source:
+      </p>
+      <ul>
+        <li>
+          GDP: CSV file from the World Bank, GDP per capita from 1960 adjusted to 2015 inflation rate. <a href="gdp_us_over_time.csv">gdp_us_over_time.csv</a>
+        </li>
+        <li>
+          EDUCATION: Excel file from the US Census Bureau, some adjustments (no edit to data, only to format) <a href="https://www.notion.so/BEHIND-THE-SCENES-51888ead791640a4b120e1b2438d7a49">were made</a>.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Data Detectives</p>
+  </footer>
+</body>
+</html>
