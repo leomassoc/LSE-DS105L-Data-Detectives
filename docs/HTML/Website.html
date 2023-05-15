@@ -37,10 +37,12 @@
       background-color: #007bff;
       color: #fff;
       padding: 20px;
+      text-align: center;
     }
 
     header h1 {
       margin: 0;
+      font-size: 32px;
     }
 
     /* Navigation */
@@ -48,22 +50,33 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     nav ul li {
       display: inline;
+      margin: 0 10px;
     }
 
     nav ul li a {
       display: inline-block;
       padding: 10px;
-      color: #fff;
+      color: #007bff;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #004aad;
     }
 
     /* Main content */
     main {
       background-color: #fff;
       padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     section {
@@ -76,6 +89,7 @@
       color: #fff;
       padding: 10px;
       text-align: center;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -86,8 +100,8 @@
   
   <nav>
     <ul>
-      <li><a href="#project-description.html">Project Description</a></li>
-      <li><a href="#data.html">Data</a></li>     
+      <li><a href="project-description.html">Project Description</a></li>
+      <li><a href="data.html">Data</a></li>     
       <li><a href="analysis.html">Analysis</a></li>
       <li><a href="results.html">Results</a></li>
       <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
