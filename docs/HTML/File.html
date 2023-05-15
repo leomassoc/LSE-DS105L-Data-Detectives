@@ -145,6 +145,8 @@
       <h2>Analysis</h2>
       1) Data Collection: collected data through the API from the Census.gov. 
 
+      
+      
       2) Data Cleaning: removing unnecessary columns, keeping only California states for initial analysis. Here are  the steps taken to clean the data from the ACS survey database:
 
       *screenshot*
@@ -153,6 +155,8 @@
 
       *screenshot*
 
+      
+      
       3) Data Merging: merging the three final datasets together, establishing a merging point, and formatting the final pandas dataframe.
 
       We used a list of counties from the census to create pandas dataframe we could merge to the combined Census dataframe to get the name of the counties.
@@ -161,10 +165,14 @@
 
       The first merge was between the two previously mentioned Census databases based on the county number. We had some difficulties due to the ECN dataset including more counties than the ACS dataset, 48 compared to 40 respectively, for the California state. While this reduced our sample size,  we are still able to explore trends in California.
 
+      
+      
       4) Transforming our Data:
 
       *screenshot*
 
+      
+      
       5) Data Visualisation: creating a scatter plot to easily visualise and notice a possible trend between education and salary. 
 
       *screenshots*
