@@ -136,111 +136,103 @@
   </nav>
 
   <main>
-    <section id="project description">
-        <h2>Project Description</h2>
-        Our project aims to evaluate the effect of education on professional success. As students, we hope to investigate if education drives our future salaries and whether the time we spend at educational facilities is actually worth it in the long term. 
-
-        The relationship between education and income is a well-studied topic in the social sciences, and researchers have used a range of methods to understand this relationship. 
-
-        Our main hypothesis is based on the human capital theory. This theory suggests that education is an investment in an individual's human capital, which can lead to higher wages and greater earning potential over their lifetime. Human capital theory suggests that education is a key determinant of an individual's income, and that higher levels of education are associated with higher levels of income.
-
-        While regression analysis can be used to estimate the relationship between education and income, given we cannot control for every potential confounder, we will use correlation analysis to examine the strength of the relationship between education and income. 
-
-        Given the limited timeframe of this project, we will focus on Unites States alone to test our hypothesis.
-      </section>
+    <section id="project-description">
+      <h2>Project Description</h2>
+      <p>
+        Our project aims to evaluate the effect of education on professional success. As students, we hope to investigate if education drives our future salaries and whether the time we spend at educational facilities is actually worth it in the long term.
+      </p>
+      <p>
+        The relationship between education and income is a well-studied topic in the social sciences, and researchers have used a range of methods to understand this relationship.
+      </p>
+      <p>
+        Our main hypothesis is based on the <strong>human capital theory</strong>. This theory suggests that education is an investment in an individual's human capital, which can lead to higher wages and greater earning potential over their lifetime. Human capital theory suggests that education is a key determinant of an individual's income, and that higher levels of education are associated with higher levels of income.
+      </p>
+      <p>
+        While regression analysis can be used to estimate the relationship between education and income, given we cannot control for every potential confounder, we will use correlation analysis to examine the strength of the relationship between education and income.
+      </p>
+      <p>
+        Given the limited timeframe of this project, we will focus on the United States alone to test our hypothesis.
+      </p>
+    </section>
 
     <section id="data">
-        <h2>Data</h2>
-        For the purpose of conducting our project, we refer to the data from Census.Gov that provides information on educational levels, educational institutions, and salaries in U.S. counties.  First, educational levels represent the percentage of people above 25 years old with Bachelor's degree. Then, from the "Firms" API, we were able to retrieve the number of educational centers per county. Lastly, we used an Excel file from the Economic Bureau to retrieve GDP per county, representative of our salary data. From the Census database, we have chosen two datasets–the Economic Census Survey(ECS) and the American Community Survey(ACS)–containing our variables of interest.
-
+      <h2>Data</h2>
+      <p>
+        For the purpose of conducting our project, we refer to the data from <strong>Census.Gov</strong> that provides information on educational levels, educational institutions, and salaries in U.S. counties. First, educational levels represent the percentage of people above 25 years old with a Bachelor's degree. Then, from the "Firms" API, we were able to retrieve the number of educational centers per county. Lastly, we used an Excel file from the Economic Bureau to retrieve GDP per county, representative of our salary data. From the Census database, we have chosen two datasets – the Economic Census Survey (ECS) and the American Community Survey (ACS) – containing our variables of interest.
+      </p>
+      <p>
         Data Source:
-
-        **GDP**: CSV file from the World Bank, GDP per capita from 1960 adjusted to 2015 inflation rate. `gdp_us_over_time.csv`
-
-        **EDUCATION**: Excel file from the US Census Bureau, some adjustments (no edit to data, only to format) [were made](https://www.notion.so/BEHIND-THE-SCENES-51888ead791640a4b120e1b2438d7a49).
-
-      </section>
+      </p>
+      <ul>
+        <li>
+          GDP: CSV file from the World Bank, GDP per capita from 1960 adjusted to 2015 inflation rate. <a href="gdp_us_over_time.csv">gdp_us_over_time.csv</a>
+        </li>
+        <li>
+          EDUCATION: Excel file from the US Census Bureau, some adjustments (no edit to data, only to format) <a href="https://www.notion.so/BEHIND-THE-SCENES-51888ead791640a4b120e1b2438d7a49">were made</a>.
+        </li>
+      </ul>
+    </section>
     
     <section id="analysis">
       <h2>Analysis</h2>
-      First, some context!
-
-      As indicators of working success we decided to use GDP per capita (hereafter referred to as GDP p.c.), as it is the easiest to use and most efficient indicator of the performance of citizens. We are aware that money is not everything in life and many other elements (even more important) play a role in determining one’s success (e.g., one’s job impact on the world, level of satisfaction with the job, popularity: who knows?) but they would be highly subjective, scarce and, hence, hard to retrieve. We will then proceed with the GDP per capita for salary; while, to measure the level of higher education we used the Census Bureau data on College/Bachelor’s Degrees attainment, this should give us at least a basic understanding of the further education levels in the country.
-
-      To clarify, we intend further/higher education as the attainment of a degree (at least undergraduate level). Obtaining such degree is not compulsory and, in normal cases, not paid for by the country.
-
-      We start by critically analysing the education-salary trend since 1940, with a small forecast for the next 10 years.
+      <p>First, let's provide some context!</p>
+      <p>As indicators of working success, we decided to use GDP per capita (referred to as GDP p.c.), as it is an efficient measure of citizens' performance. While we acknowledge that money is not everything in life and other factors are important (e.g., job impact on the world, job satisfaction, popularity), they are subjective and hard to retrieve. Therefore, we will focus on GDP p.c. as a salary indicator, and for measuring higher education levels, we will use the Census Bureau data on College/Bachelor’s Degrees attainment, providing us with a basic understanding of educational attainment in the country.</p>
+      <p>For our analysis, we will critically examine the education-salary trend since 1940, along with a small forecast for the next 10 years.</p>
+      <h3>1) Data Collection</h3>
+      <p>We collected data through the API from Census.gov.</p>
+    
+      <h3>2) Data Cleaning</h3>
+      <p>We removed unnecessary columns and kept only data from California for initial analysis. Here are the steps we took to clean the data from the ACS survey database:</p>
+      <p>(insert screenshot or code snippet)</p>
+    
+      <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the ACS data.</p>
+      <p>(insert screenshot or code snippet)</p>
       
+      <h3>3) Data Merging</h3>
+      <p>We merged the three final datasets together, establishing a merging point and formatting the final pandas dataframe.</p>
+      <p>To get the name of the counties, we used a list of counties from the census to create a pandas dataframe that could be merged with the combined Census dataframe.</p>
+      <p>(insert screenshot or code snippet)</p>
+      <p>The first merge was between the two previously mentioned Census databases based on the county number. We encountered some difficulties as the ECN dataset included more counties than the ACS dataset (48 compared to 40, respectively, for the California state). However, we were still able to explore trends in California.</p>
       
-      1) Data Collection: collected data through the API from the Census.gov. 
-
+      <h3>4) Transforming our Data</h3>
+      <p>(insert screenshot or code snippet)</p>
       
-      
-      2) Data Cleaning: removing unnecessary columns, keeping only California states for initial analysis. Here are  the steps taken to clean the data from the ACS survey database:
-
-      *screenshot*
-
-      Here, we change the type of the variables of interest from the ECS Census Database. Then, we prepared it to be merged with the other pandas dataframe from the ACS data.
-
-      *screenshot*
-
-      
-      
-      3) Data Merging: merging the three final datasets together, establishing a merging point, and formatting the final pandas dataframe.
-
-      We used a list of counties from the census to create pandas dataframe we could merge to the combined Census dataframe to get the name of the counties.
-
-      *screenshot*
-
-      The first merge was between the two previously mentioned Census databases based on the county number. We had some difficulties due to the ECN dataset including more counties than the ACS dataset, 48 compared to 40 respectively, for the California state. While this reduced our sample size,  we are still able to explore trends in California.
-
-      
-      
-      4) Transforming our Data:
-
-      *screenshot*
-
-      
-      
-      5) Data Visualisation: creating a scatter plot to easily visualise and notice a possible trend between education and salary. 
-
-      *screenshots*
-      <img src="path/to/your/image.jpg" alt="Analysis Graph">
-      <!-- Add visulas/graphs here -->
-      </section>
-
+      <h3>5) Data Visualization</h3>
+      <p>We created scatter plots to easily visualize and identify possible trends between education and salary.</p>
+      <p>(insert screenshots or code snippets)</p>
+    </section>
+    
     <section id="results">
-        <h2>Results</h2>
-        All clear? Now we are ready to show you our findings.
-
-        We start off by retrieving the education data through the Census API (to keep this page unpolluted, we left a detailed and coded explanation in the [“Behind the Scenes”](https://www.notion.so/51888ead791640a4b120e1b2438d7a49) page). Initially, we looked at the relation between Bachelor’s degree and GDP p.c. amongst the counties of California. In our research, we also considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes and universities) to measure the investments made by the counties into education.
-
-        Data are retrieved from three different datasets and then merged: we used the GEO_ID (the geographical variable used by the census
-      </section>
+      <h2>Results</h2>
+      <p>Now, let's dive into our findings!</p>
+      <p>To retrieve the education data, we utilized the Census API. We examined the relationship between Bachelor's degree attainment and GDP p.c. among the counties of California. Additionally, we considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes, and universities) to measure the educational investments made by the counties.</p>
+      <p>The data were retrieved from three different datasets and then merged using the GEO_ID (the geographical variable used by the census).</p>
+    </section>
     
     <section id="behind-the-scenes">
       <h2>Behind the Scenes</h2>
       <!-- Add your behind the scenes content here -->
-      </section>
+    </section>
     
     <section id="conclusions">
-        <h2>Conclusions</h2>
-        <!-- Add conclsions content here -->
-      </section>
+      <h2>Conclusions</h2>
+      <!-- Add your conclusions content here -->
+    </section>
 
     <section id="authors">
       <h2>Authors</h2>
       <!-- Add information about the authors here -->
-      </section>
+    </section>
     
     <section id="references">
       <h2>References</h2>
       <!-- Add your references content here -->
-      </section>
+    </section>
+    
   </main>
 
   <footer>
-    <p>&copy; 2023 Your Name</p>
+    <p>&copy; Data Detectives</p>
   </footer>
 </body>
 </html>
