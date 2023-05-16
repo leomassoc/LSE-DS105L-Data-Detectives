@@ -113,11 +113,21 @@
 
   <main class="container">
     <section>
-      <h2>Results</h2>
+      <h2>Now we are ready to show you our findings!</h2>
       <p>Now, let's dive into our findings!</p>
-      <p>To retrieve the education data, we utilized the Census API. We examined the relationship between Bachelor's degree attainment and GDP p.c. among the counties of California. Additionally, we considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes, and universities) to measure the educational investments made by the counties.</p>
-      <p>The data were retrieved from three different datasets and then merged using the GEO_ID (the geographical variable used by the census).</p>
+      <p>We start off by retrieving the education data through the Census API (to keep this page unpolluted, we left a detailed and coded explanation in the “Behind the Scenes” page). Initially, we looked at the relation between Bachelor’s degree and GDP p.c. amongst the counties of California. In our research, we also considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes and universities) to measure the investments made by the counties into education.</p>
+      <p>Data are retrieved from three different datasets and then merged: we used the GEO_ID (the geographical variable used by the census).</p>
     </section>
+
+    <section>
+      <p>Both values were recorded in 2017: unfortunately we are missing longer temporal datasets.</p>
+      <div class="chart-container">
+        <img class="chart" src="income_chart.png" alt="Scatter Plot with Bachelor’s Degree">
+        <p class="chart-description">The figure shows...</p>
+      <p>However, we cannot escape from a vicious cycle that does not allow to understand if education or income  comes first : richer counties and can afford to pay further studies to their children or individuals that have studied more earn more.</p>
+      </div>
+    </section>
+
   </main>
 
   <footer>
