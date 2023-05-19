@@ -1,7 +1,10 @@
 
 # DS105L Team Project - Data Detectives 🕵
 
-This is the team project for the team "Data Detectives" for the DS105L Lent Term. The goal of the project is to use county panel data to understand the relationship between indicators of years of experience and education and measures of welfare in counties in the United States using census data.
+Does education still matter in the XXI century? Do we need a Bachelor’s degree to succeed in the professional world? Is inequality linked into education or salary? 
+We decided to analyse the impact that education has on individuals' salary: is it responsible for higher wages?. As you will be able to see in the [Behind the Scenes]() page we diversified our sources, after a careful factcheck and reliability control. 
+
+Visit our website [here]()
 
 # 👥 **Team** 
 
