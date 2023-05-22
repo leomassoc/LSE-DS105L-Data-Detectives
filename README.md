@@ -15,5 +15,5 @@ Visit our website [here](https://htmlpreview.github.io/?https://raw.githubuserco
 - [Seyi](https://github.com/seyiojolse) worked on data visualisation
 
 <div id="header" align="center">
-  <img src="https://media.giphy.com/media/3o7qDSOvfaCO9b3MlO/giphy.gif" width="1000"/>
+  <img src="https://media.giphy.com/media/3o7qDSOvfaCO9b3MlO/giphy.gif" width="500"/>
 </div>
