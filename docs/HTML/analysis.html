@@ -103,9 +103,8 @@
       <li><a href="project-description.html">Project Description</a></li>
       <li><a href="data.html">Data</a></li>     
       <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="results.html">Results</a></li>
+      <li><a href="results.html">Results & Conclusions</a></li>
       <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
-      <li><a href="conclusions.html">Conclusions</a></li>
       <li><a href="authors.html">Authors</a></li>
       <li><a href="references.html">References</a></li>
     </ul>
@@ -114,36 +113,42 @@
   <main class="container">
     <section>
       <h2>Analysis</h2>
-      <p>First, let's provide some context!</p>
-      <p>As indicators of working success, we decided to use GDP per capita (referred to as GDP p.c.), as it is an efficient measure of citizens' performance. While we acknowledge that money is not everything in life and other factors are important (e.g., job impact on the world, job satisfaction, popularity), they are subjective and hard to retrieve. Therefore, we will focus on GDP p.c. as a salary indicator, and for measuring higher education levels, we will use the Census Bureau data on College/Bachelor’s Degrees attainment, providing us with a basic understanding of educational attainment in the country.</p>
-      <p>For our analysis, we will critically examine the education-salary trend since 1940, along with a small forecast for the next 10 years.</p>
-      <h3>1) Data Collection</h3>
-      <p>We collected data through the API from Census.gov.</p>
-    
-      <h3>2) Data Cleaning</h3>
-      <p>We removed unnecessary columns and kept only data from California for initial analysis. Here are the steps we took to clean the data from the ACS survey database:</p>
-      <p>(insert screenshot or code snippet)</p>
-    
-      <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the ACS data.</p>
-      <p>(insert screenshot or code snippet)</p>
-      
-      <h3>3) Data Merging</h3>
-      <p>We merged the three final datasets together, establishing a merging point and formatting the final pandas dataframe.</p>
-      <p>To get the name of the counties, we used a list of counties from the census to create a pandas dataframe that could be merged with the combined Census dataframe.</p>
-      <p>(insert screenshot or code snippet)</p>
-      <p>The first merge was between the two previously mentioned Census databases based on the county number. We encountered some difficulties as the ECN dataset included more counties than the ACS dataset (48 compared to 40, respectively, for the California state). However, we were still able to explore trends in California.</p>
-      
-      <h3>4) Transforming our Data</h3>
-      <p>(insert screenshot or code snippet)</p>
-      
-      <h3>5) Data Visualization</h3>
-      <p>We created scatter plots to easily visualize and identify possible trends between education and salary.</p>
-      <p>(insert screenshots or code snippets)</p>
+      <p>
+        For our analysis, we will critically examine the education-salary trend since 1940, along with a small forecast for the next 10 years.
+      </p>
+      <p>The historical data already shows a strong incremental correlation between the two elements, with the GDP p.c. rising, with a slopes due to cyclical recession, especially prominent around the 2008 financial crisis and 2020 COVID-19 Pandemic.</p>
+      <p>The black dots represent the annual value, the blue line is the actual forecast with the marginal error indicated in the light blue shade.</p>
+      <p>Also, we have marked the pandemic year 2022, to show the negative impact it had on both elements.</p>
     </section>
+
+    <section>
+      <div class="chart-container">
+        <img class="chart" src="income_chart.png" alt="Chart">
+        <p class="chart-description">Fig. 1: A first look at US GDP per capita over the years with a small forecast of the 2020-2030 period. COVID-19 year is marked by a red line.</p>
+      </div>
+    </section>
+    <section>
+      <div class="chart-container">
+        <img class="chart" src="income_chart.png" alt="Chart">
+        <p class="chart-description">Fig. 2: A first look at US College Percentage over the years with a small forecast of the 2020-2030 period. COVID-19 year is marked by a red line.</p>
+      </div>
+    </section>
+    <p>A small correlation is already noticeable, with both impacted by the pandemic (although we cannot be already sure that they are strictly correlated). We compare them in the next graph.</p>
+    <section>
+      <div class="chart-container">
+        <img class="chart" src="income_chart.png" alt="Graph">
+        <p class="chart-description">Fig. 1: College Percentage and GDP per capita (constant 2015 US$) and forecasts for the 2023-2033 period.</p>
+      </div>
+    </section>
+    <p>A correlation is evident. But is it strictly related? Is economic increase just a common trend over time? How can we be sure that the economic increase is strictly due to the percentage of college education?</p>
+    <p>Analysing at a county level, the correlation is more relevant. Richer counties are more educated. </p>
   </main>
 
+  
   <footer>
     <p>&copy; 2023 Data Detectives</p>
   </footer>
 </body>
 </html>
+
+
