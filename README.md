@@ -14,4 +14,6 @@ Visit our website [here](https://htmlpreview.github.io/?https://raw.githubuserco
 - [Leo](https://github.com/leomassoc) collected API data and worked on data cleaning
 - [Seyi](https://github.com/seyiojolse) worked on data visualisation
 
-<iframe src="https://giphy.com/embed/3o7qDSOvfaCO9b3MlO" width="480" height="342" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/obama-mic-drop-out-3o7qDSOvfaCO9b3MlO">via GIPHY</a></p>
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/3o7qDSOvfaCO9b3MlO/giphy.gif" width="1000"/>
+</div>
