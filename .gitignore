@@ -190,4 +190,4 @@ rsconnect/
 /site_libs/
 
 ### CUSTOM ###
-
+.DS_Store
