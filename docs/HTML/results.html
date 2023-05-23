@@ -110,19 +110,14 @@
   </nav>
 
   <main class="container">
-    <section>
       <h2>Results & Conclusions</h2>
       <p>Both values were recorded in 2017: unfortunately we are missing longer temporal datasets.</p>
-      <div class="chart-container">
-        <img class="chart" src="income_chart.png" alt="Scatter Plot with Bachelor’s Degree">
-        <p class="chart-description">The correlation between the two is more prominent on a state level (California). We proceed to show the trends at a state level: the correlation is not as strong as at the county level. We will investigate the possible reasons in the next paragraphs.</p>
-      </div>
+        <img src="fig4.png" alt="Fig 4" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
+        <p>The correlation between the two is more prominent on a state level (California). We proceed to show the trends at a state level: the correlation is not as strong as at the county level. We will investigate the possible reasons in the next paragraphs.</p>
 
-      <div class="chart-container">
-        <img class="chart" src="income_chart.png" alt="chart">
-        <p class="chart-description">As per the remainder of the research, find the details of how we got to these graphs in the @BEHIND THE SCENES [LINK] section.</p>
-      </div>
-    </section>
+        <img src="fig5.png" alt="Fig 5" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
+        <p>As per the remainder of the research, find the details of how we got to these graphs in the <a href="behind-the-scenes.html">Behind the Scenes</a> section.</p>
+  
   
     <section>
       <h3>Is it the same everywhere?</h3>
@@ -130,14 +125,29 @@
       <p>[SCREENSHOTS from the various states.]</p>
       <p>We have also traced a line showing the upward trend between the two factors.</p>
     </section>
-   <section>
+
+    <section>
     <h3>Is it the same for everyone?</h3>
       <p>As a further step and attempt to define a valid theory, we analyse the impact of education on income of different races in the United States. Unfortunately, we have not found any data on education levels divided by race and county while we were able to retrieve data on salary per race in each region.</p>
       <p>After merging and reshaping the data frame (you can read more about it here), we plotted out the results: they confirm our hypothesis.</p>
     </section>
+    <p>However, we cannot escape the endogeneity problem–a vicious cycle preventing us from understanding what come first (ie. the chick or the chicken): do richer counties have higher educational opportunities because they can afford them or do individuals that having studied contribute to the higher income of their counties? </p>
     
-    <p>However, we cannot escape from a vicious cycle that does not allow to understand if education or income  comes first : richer counties and can afford to pay further studies to their children or individuals that have studied more earn more.</p>
-  
+    <section>
+      <h3>Research Limitations</h3>
+      <ol>
+        <li>
+          The first clear limitation is the spatial one: we only focused on the US as one of the largest and easiest countries to analyze due to its economy. This trend, however, may not be visible in other countries. → a further point should be the one of expanding the sources.
+        </li>
+        <li>
+          The second limitation concerns the causal inference. What comes first? Education or salary: does richer families allow their children to study more or is a higher level of education that allowed individuals to earn more and jump from one social class to another. → having data on individuals’ level of attainment and their salary would have helped instead of having access to aggregate data only.
+        </li>
+        <li>
+          Lastly, we could expand our research by further analyzing whether adverse events (economic crisis, pandemic, recession, wars) influence the College percentage. For that, we would need more evidence and data on how much different events affect the economy and education.
+        </li>
+      </ol>
+    </section>
+    
   </main>
 
   <footer>
