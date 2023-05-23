@@ -1,6 +1,5 @@
 # This is where your reusable code will live.
 # If you have code that is used in multiple notebooks, you can put it here.
-
 def example_package_function():
     """
     An example of package function.
