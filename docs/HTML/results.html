@@ -111,29 +111,47 @@
 
   <main class="container">
       <h2>Results & Conclusions</h2>
-      <p>Both values were recorded in 2017: unfortunately we are missing longer temporal datasets.</p>
-        <img src="fig4.png" alt="Fig 4" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
-        <p>The correlation between the two is more prominent on a state level (California). We proceed to show the trends at a state level: the correlation is not as strong as at the county level. We will investigate the possible reasons in the next paragraphs.</p>
+      <section>
+        <p> We start off by retrieving the education data through the Census API (to keep this page unpolluted, we left a detailed and coded explanation in the “Behind the Scenes” page). Initially, we looked at the relation between Bachelor’s degree and GDP p.c. amongst the counties of California. In our research, we also considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes and universities) to measure the investments made by the counties, states and the United States government into education.</p>
+        <p>Data are retrieved from three different datasets and then merged: we used the "GEO_ID" (the geographical variable used by the census) to complete the merging process.</p>
+        <p>In Notebook 1, we obtained a single dataframe for the county of California. We decided to plot it to visually analyse the first results. The correlation coefficient is 0.722, already quite significative.</p>
+      </section>
 
-        <img src="fig5.png" alt="Fig 5" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
-        <p>As per the remainder of the research, find the details of how we got to these graphs in the <a href="behind-the-scenes.html">Behind the Scenes</a> section.</p>
-  
+      <section>
+        <p>Both values were recorded in 2017: unfortunately we are missing longer temporal datasets.</p>
+          <img src="fig4.png" alt="Fig 4" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
+          <p>The correlation between the two is more prominent on a state level (California). We proceed to show the trends at a state level: the correlation is not as strong as at the county level. We will investigate the possible reasons in the next paragraphs.</p>
+
+          <img src="fig5.png" alt="Fig 5" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
+          <p>As per the remainder of the research, find the details of how we got to these graphs in the <a href="behind-the-scenes.html">Behind the Scenes</a> section.</p>
+      </section>
   
     <section>
       <h3>Is it the same everywhere?</h3>
       <p>We analysed the same trends in many other states to verify that our hypothesis (i.e., that education plays a positive role in defining one’s income).</p>
-      <p>[SCREENSHOTS from the various states.]</p>
-      <p>We have also traced a line showing the upward trend between the two factors.</p>
+      <p>Our research has led to the confirmation of a positive relationship between these two variables, and this is shown below.</p>
+      <p>Examples of states with the GDP per capita plotted against education attainment at a state level are plotted below, with individual counties as our data points</p>
+      <p>By finding the correlation coefficient for each state, through compiling all the counties within each state, we test our hypothesis.</p>
+      <p>The first impression we get from these first three scatterplots, is that the percent of the population with a Bachelor’s degree is observably unchanging, compared to GDP per Capita.</p>
+      <p>Despite this, we found that average correlation coefficient to be approximately +0.118. This is not evidence of a strong relationship between our two variables, but it does work in favour of our theory. We now move on to examine the 5 states with the highest correlation coefficient to further dissect the data. </p>
+      <p>These states are characteristically relatively lowly  populated states, and not necessarily hubs of economic activity. Their combined population total is (calculate). 
+        The line of best fit is used to help visualize relationships between the x and y variables. Here, its clear the 5 states with the highest correlation coefficients are also those with very few counties. Hence, we cannot rely on these plots to draw a reliable conclusion.</p>
+      <p>On the other hand, we repeat the process for the states with the lowest values of correlation coefficients.</p>
+      <p>These states do have a greater number of counties, which makes inferences made from their correlation coefficient are more reliable than in the previous example. The trend for these states if for the Percent of the Population with a Bachelor’s degree to actually decline slightly, when GDP per Capita increases</p>
+    </section>
+
+    <section>
+      <p>We believe that our calculation of the average correlation coefficient between GDP per Capita and Education attainment, of 0.118, does a positive relationship. However, 0.118 is still very close to zero, and does not indicate that there is a strong relationship. As for the nature of this relationship, further analysis is required to determine whether GDP per Capita is a determinant of the Higher education attainment of states, or the other way around.</p>
+      <p>Firstly, these plots are evidence of a correlation between the number of educational institutions and the percent of population with a Bachelor’s degree. Judging the educational attainment of counties by these two variables is therefore reasonable.</p>
+      <p>We see that what we might call outlier counties, with very high GDP per capita’s  are  belong to California, State 11, state 22, state 36. The counties with the highest educational attainment belong to state 48, state 37. The only states with counties in the top 25 of GDP per capita and Percent of Population with a Bachelor’s degree are state 8, 48 , 51, 17, 8, 13, 36, 37, 40. We can deduct that these states feature counties with a balance between GDP and higher education attainment.i.e. 9 states out of 25. ( 36%). We believe that this does work in favour of the hypothesis that education is a key determinant of GDP per capita.</p>
     </section>
 
     <section>
     <h3>Is it the same for everyone?</h3>
-      <p>As a further step and attempt to define a valid theory, we analyse the impact of education on income of different races in the United States. Unfortunately, we have not found any data on education levels divided by race and county while we were able to retrieve data on salary per race in each region.</p>
-      <p>After merging and reshaping the data frame (you can read more about it here), we plotted out the results: they confirm our hypothesis.</p>
-    </section>
-    <p>However, we cannot escape the endogeneity problem–a vicious cycle preventing us from understanding what come first (ie. the chick or the chicken): do richer counties have higher educational opportunities because they can afford them or do individuals that having studied contribute to the higher income of their counties? </p>
-    
-    <section>
+      <p>Although so far we have seen a positive trend in many states and slightly at the national level between average higher educational attainment and national income among counties, it does not show the whole story. Is this trend potentially stronger when looking at counties with a population that is mostly white? Or one that is mostly black?</p>
+      <p>Our analysis have allowed us to suggest that this is a potentially important area to further research since the gains to education for a county might be different depending on the characteristics of its population. This would imply that there is a variable other than education leading both national income and education to increase in those counties, making education not as important as this third factor. </p>
+      <p>Here we look at counties in North Carolina, and see that the overall trend when looking at all races between education and national income differs when we only select counties with majority white, black or native populations.</p>
+      <section>
       <h3>Research Limitations</h3>
       <ol>
         <li>

@@ -113,31 +113,52 @@
   <main class="container">
     <section>
       <h2>Behind the Scenes</h2>
+      <p>In this page we collected the “Behind the Scenes” of our research, i.e., the code-intense part that highlights the reliability of our research and methods. The tasks has been divided equally (you can check the <a href="authors.html">Authors Page</a>) to ensure diversity of ideas and opinions and avoiding bias of any kind in the research.</p>
+      <p>The <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/tree/main/notebooks">notebooks </a> of our repository has been organised in order to provide different aspects and steps in our research and do not necessarily reflect the order of neither this page nor the analysis one.</p>
       <h3>1) Data Collection</h3>
       <section>
-        <p>We start off by retrieving the education data through the Census API (to keep this page unpolluted, we left a detailed and coded explanation in the “Behind the Scenes” page). Initially, we looked at the relation between Bachelor’s degree and GDP p.c. amongst the counties of California. In our research, we also considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes and universities) to measure the investments made by the counties into education.</p>
-        <p>Data are retrieved from three different datasets and then merged: we used the GEO_ID (the geographical variable used by the census).</p>
+        <p>Our main and initial source was the <a href="https://www.census.gov/"> Census.gov </a> API, a comprehensive database on different variables describing the US society. To proceed with our research we initially requested the JSON file using the API Key. The API provided us with the percentage of educational attainment and the number of educational firms in each county. </p>
+        <p>We decided to change the output to a Pandas data frame for easier layout.</p>
+        <p>We also used some sources originally presented as CSV or Excel files. We easily imported and opened them using once again the Pandas library.</p>
       </section>    
       <h3>2) Data Cleaning</h3>
       <p>We removed unnecessary columns and kept only data from California for initial analysis. Here are the steps we took to clean the data from the ACS survey database:</p>
       <p>(insert screenshot or code snippet)</p>
     
-      <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the ACS data.</p>
+      <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the Bureau of Economic data.</p>
       <p>(insert screenshot or code snippet)</p>
       
       <h3>3) Data Merging</h3>
-      <p>We merged the three final datasets together, establishing a merging point and formatting the final pandas dataframe.</p>
-      <p>To get the name of the counties, we used a list of counties from the census to create a pandas dataframe that could be merged with the combined Census dataframe.</p>
+      <p>Based on these two datasets, from the economic and the American Community Survey Census, we merged them and selected California as the first state we were going to take a look at. To avoid possible sources of conflicting data we chose 2017 for both of these census.</p>
       <p>(insert screenshot or code snippet)</p>
-      <p>The first merge was between the two previously mentioned Census databases based on the county number. We encountered some difficulties as the ECN dataset included more counties than the ACS dataset (48 compared to 40, respectively, for the California state). However, we were still able to explore trends in California.</p>
+      <p>The first merge was between the two previously mentioned Census databases based on the county number. We encountered some difficulties as the ECS dataset included more counties than the ACS dataset (48 compared to 40, respectively, for the California state). However, with the given county sample, we were still able to explore trends in California. </p>
       
       <h3>4) Transforming our Data</h3>
-      <p>(insert screenshot or code snippet)</p>
-      
+      <p>Furthermore, we realized that the US government uses two similar codes on its data to classify each county, GEO_ID and and GEO_FIPS. Thus, we changed the GEO_FIPS column on our merged census pandas dataframe to match the GEO_ID data.</p>
+      <p>This made it possible for us to another dataset which contained National Income from 2009 to 2018 per county based on its GEO_ID. Meaning we could merge it with our pandas dataset which contains info on educational institutions and Percentage of those with a Bachelor’s degree in each county based on the GEO_ID Column. </p>
+      <p>With all of this so far, we have been able to create a pandas data frame containing data on each county on education and income using GEO_ID to quickly identify them.</p>
       <h3>5) Data Visualization</h3>
       <p>We created scatter plots to easily visualize and identify possible trends between education and salary.</p>
    
       <h3>6) Forecasting</h3>
+      <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/main/notebooks/NB3%20Forecasting.ipynb"> Notebook 3</a> we only focus on the forecasting of the education and GDP trends. To do such analysis we used longer temporal data frames that could picture the situation in the US in the past. The economic data is retrieved from the World Bank, while the college percentage is retrieved from a .xlsx file from the Census.gov. We opened the data and we plotted it out. We had to be careful with the units of measurements. In the first case, for the GDP, the levels were ranging from 200 000 to 600 000, while in the second, the percentages were shifting from 5 to 40. After that, we immediately noticed a positive trend in both elements, as we noted in the analysis. The actual forecast was made through the "Prophet" library, that automatically generates a forecast for the period set. The graph generated shows the forecast with a upper and lower error margin. Before that, we made sure to adapt the data frame to the requirements of the library, i.e. renaming the date to "ds" (after having transformed it to date-time format) and y as the variable.</p>
+      <p>We also decided to plot out a line on the year 2020 to highlight the pandemic effects. The code follows.</p>
+      <p>Lastly, we merged once again the two forecasts to obtain a single final merged plot, as shown below.</p>
+    </section>
+    <section>
+      <h4>Issues and Challenges</h4>
+      <ol style="margin-left: 20px;">
+        <li>From the Census Bureau, some counties had different percentages of educational attainment
+          <ol type="a">
+            <li>To solve the issue, if we encountered two or more rows with the same county and state code, we took the average percentage and kept only one row </li>
+          </ol>
+        </li>
+        <li>From one dataset to the other, we noticed a significant loss in rows: although this might seem an issue, it could just frame reality as there must be counties without educational institutions.
+          <ol type="a">
+            <li>We proceed our research with 1393 counties instead of the actual 3143.</li>
+          </ol>
+        </li>
+      </ol>      
     </section>
   </main>
 
