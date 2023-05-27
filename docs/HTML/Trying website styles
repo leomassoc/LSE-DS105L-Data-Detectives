@@ -74,14 +74,14 @@
           margin: 0;
           font-size: 32px;
           font-weight: bold;
-          margin-top: 100px;
-          margin-bottom: 0px; /* Adjust the margin-bottom value to reduce the space */
+          margin-top: 140px;
+          margin-bottom: -20px; /* Adjust the margin-bottom value to reduce the space */
           filter: brightness(1.2); /* Increase brightness */
         }
 
         header .logo {
           height: 90px;
-          margin-bottom: 80px; /* Adjust the margin-bottom value to reduce the space */
+          margin-bottom: 100px; /* Adjust the margin-bottom value to reduce the space */
           filter: brightness(1.2); /* Increase brightness */
         }
 
@@ -92,9 +92,10 @@
           margin: 0;
           padding: 0;
           text-align: center;
-          background-color: #f1f1f1;
+          background-color: hwb(0 0% 100% / 0.91); /* Change to match the banner overlay */
           border-bottom: 1px solid #ccc;
         }
+
 
         nav ul li {
           display: inline;
@@ -104,15 +105,17 @@
         nav ul li a {
           display: inline-block;
           padding: 10px;
-          color: #007bff;
+          color: #fff; /* Change to match the banner title color */
           font-weight: bold;
           text-transform: uppercase;
           transition: color 0.3s;
         }
 
         nav ul li a:hover {
-          color: #004aad;
+          color: #e6e6e6; /* Change to a slightly lighter shade for hover effect */
+          background-color: rgba(101, 66, 66, 0.1); /* Add a hover background color */
         }
+
 
         /* Main content */
         main {
@@ -133,11 +136,20 @@
 
         /* Footer */
         footer {
-          background-color: #007bff;
+          background-color: rgba(0, 0, 0, 0.836); /* Add a hover background color */
           color: #fff;
           padding: 10px;
           text-align: center;
           margin-top: 20px;
+        }
+        footer p {
+          margin-bottom: 0px; /* Increase the margin-bottom value to lower the text */
+        }
+
+        footer .logo {
+          height: 90px;
+          filter: brightness(1.2);
+          margin-bottom: 10px; /* Add margin to separate the logo from the text */
         }
 
         footer a {
@@ -164,8 +176,8 @@
     <ul>
       <li><a href="project-description.html">Project Description</a></li>
       <li><a href="data.html">Data</a></li>     
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="results.html">Results & Conclusions</a></li>
+      <li><a href="analysis.html">Analysis & Results</a></li>
+      <li><a href="results.html">Implications</a></li>
       <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
       <li><a href="authors.html">Authors</a></li>
       <li><a href="references.html">References</a></li>
@@ -210,13 +222,11 @@
       <img src="success-chart.jpg" alt="Success Chart">
     </section>
   </main>
+  
   <footer>
-    <p>&copy; 2023 Data Detectives</p>
-    <div>
-      <a href="#"><img src="social-media-icons/facebook-icon.png" alt="Facebook"></a>
-      <a href="#"><img src="social-media-icons/twitter-icon.png" alt="Twitter"></a>
-      <a href="#"><img src="social-media-icons/instagram-icon.png" alt="Instagram"></a>
-    </div>
+    <p style="margin-top: 50px;">2023 Data Detectives</p>
+    <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
   </footer>
+  
 </body>
 </html>

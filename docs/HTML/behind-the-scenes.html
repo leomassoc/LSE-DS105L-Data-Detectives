@@ -32,78 +32,152 @@
       text-decoration: underline;
     }
 
-    /* Header */
-    header {
-      background-color: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        /* Header */
+        header {
+          position: relative;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+        .banner-overlay {
+          background-image: url('LSE globe banner.jpeg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat; /* Prevent repeating the background image */
+          height: 200px;
+          width: 100%;
+          text-align: center;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-    /* Navigation */
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+        .banner-overlay::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
 
-    nav ul li {
-      display: inline;
-      margin: 0 10px;
-    }
+        .header-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          height: 100%;
+        }
 
-    nav ul li a {
-      display: inline-block;
-      padding: 10px;
-      color: #007bff;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
+        .banner-title {
+          margin: 0;
+          font-size: 32px;
+          font-weight: bold;
+          margin-top: 140px;
+          margin-bottom: -20px; /* Adjust the margin-bottom value to reduce the space */
+          filter: brightness(1.2); /* Increase brightness */
+        }
 
-    nav ul li a:hover {
-      color: #004aad;
-    }
+        header .logo {
+          height: 90px;
+          margin-bottom: 100px; /* Adjust the margin-bottom value to reduce the space */
+          filter: brightness(1.2); /* Increase brightness */
+        }
 
-    /* Main content */
-    main {
-      background-color: #fff;
-      padding: 20px;
-      margin-top: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
 
-    section {
-      margin-bottom: 40px;
-    }
+        /* Navigation */
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          background-color: hwb(0 0% 100% / 0.91); /* Change to match the banner overlay */
+          border-bottom: 1px solid #ccc;
+        }
 
-    /* Footer */
-    footer {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      margin-top: 20px;
-    }
+
+        nav ul li {
+          display: inline;
+          margin: 0 10px;
+        }
+
+        nav ul li a {
+          display: inline-block;
+          padding: 10px;
+          color: #fff; /* Change to match the banner title color */
+          font-weight: bold;
+          text-transform: uppercase;
+          transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: #e6e6e6; /* Change to a slightly lighter shade for hover effect */
+          background-color: rgba(101, 66, 66, 0.1); /* Add a hover background color */
+        }
+
+
+        /* Main content */
+        main {
+          background-color: #fff;
+          padding: 20px;
+          margin-top: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+          margin-bottom: 40px;
+        }
+
+        section img {
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+          background-color: rgba(0, 0, 0, 0.836); /* Add a hover background color */
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+          margin-top: 20px;
+        }
+        footer p {
+          margin-bottom: 0px; /* Increase the margin-bottom value to lower the text */
+        }
+
+        footer .logo {
+          height: 90px;
+          filter: brightness(1.2);
+          margin-bottom: 10px; /* Add margin to separate the logo from the text */
+        }
+
+        footer a {
+          color: #fff;
+          margin: 0 5px;
+        }
+
+        footer a:hover {
+          text-decoration: underline;
+        }
   </style>
 </head>
 <body>
   <header>
-    <h1>Should You Drop Out?</h1>
-  </header>
-  
+    <div class="banner-overlay">
+      <div class="header-content">
+        <h1 class="banner-title">Should You Drop Out?</h1>
+        <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
+      </div>
+    </div>
+  </header>  
+
   <nav>
     <ul>
       <li><a href="project-description.html">Project Description</a></li>
       <li><a href="data.html">Data</a></li>     
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="results.html">Results & Conclusions</a></li>
+      <li><a href="analysis.html">Analysis & Results</a></li>
+      <li><a href="results.html">Implications</a></li>
       <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
       <li><a href="authors.html">Authors</a></li>
       <li><a href="references.html">References</a></li>
@@ -118,35 +192,53 @@
       <h3>1) Data Collection</h3>
       <section>
         <p>Our main and initial source was the <a href="https://www.census.gov/"> Census.gov </a> API, a comprehensive database on different variables describing the US society. To proceed with our research we initially requested the JSON file using the API Key. The API provided us with the percentage of educational attainment and the number of educational firms in each county. </p>
+        <section style="text-align: center;">
+          <img src="fig12.png" alt="Fig 12" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+        </section> 
         <p>We decided to change the output to a Pandas data frame for easier layout.</p>
         <p>We also used some sources originally presented as CSV or Excel files. We easily imported and opened them using once again the Pandas library.</p>
+        <img src="fig13.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+
       </section>    
       <h3>2) Data Cleaning</h3>
       <p>We removed unnecessary columns and kept only data from California for initial analysis. Here are the steps we took to clean the data from the ACS survey database:</p>
-      <p>(insert screenshot or code snippet)</p>
+      <img src="fig14.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
     
       <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the Bureau of Economic data.</p>
-      <p>(insert screenshot or code snippet)</p>
       
       <h3>3) Data Merging</h3>
       <p>Based on these two datasets, from the economic and the American Community Survey Census, we merged them and selected California as the first state we were going to take a look at. To avoid possible sources of conflicting data we chose 2017 for both of these census.</p>
-      <p>(insert screenshot or code snippet)</p>
+      <img src="fig15.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
       <p>The first merge was between the two previously mentioned Census databases based on the county number. We encountered some difficulties as the ECS dataset included more counties than the ACS dataset (48 compared to 40, respectively, for the California state). However, with the given county sample, we were still able to explore trends in California. </p>
       
       <h3>4) Transforming our Data</h3>
       <p>Furthermore, we realized that the US government uses two similar codes on its data to classify each county, GEO_ID and and GEO_FIPS. Thus, we changed the GEO_FIPS column on our merged census pandas dataframe to match the GEO_ID data.</p>
+      <img src="fig16.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
       <p>This made it possible for us to another dataset which contained National Income from 2009 to 2018 per county based on its GEO_ID. Meaning we could merge it with our pandas dataset which contains info on educational institutions and Percentage of those with a Bachelor’s degree in each county based on the GEO_ID Column. </p>
+      <img src="fig17.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
       <p>With all of this so far, we have been able to create a pandas data frame containing data on each county on education and income using GEO_ID to quickly identify them.</p>
+      
       <h3>5) Data Visualization</h3>
       <p>We created scatter plots to easily visualize and identify possible trends between education and salary.</p>
-   
-      <h3>6) Forecasting</h3>
-      <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/main/notebooks/NB3%20Forecasting.ipynb"> Notebook 3</a> we only focus on the forecasting of the education and GDP trends. To do such analysis we used longer temporal data frames that could picture the situation in the US in the past. The economic data is retrieved from the World Bank, while the college percentage is retrieved from a .xlsx file from the Census.gov. We opened the data and we plotted it out. We had to be careful with the units of measurements. In the first case, for the GDP, the levels were ranging from 200 000 to 600 000, while in the second, the percentages were shifting from 5 to 40. After that, we immediately noticed a positive trend in both elements, as we noted in the analysis. The actual forecast was made through the "Prophet" library, that automatically generates a forecast for the period set. The graph generated shows the forecast with a upper and lower error margin. Before that, we made sure to adapt the data frame to the requirements of the library, i.e. renaming the date to "ds" (after having transformed it to date-time format) and y as the variable.</p>
-      <p>We also decided to plot out a line on the year 2020 to highlight the pandemic effects. The code follows.</p>
-      <p>Lastly, we merged once again the two forecasts to obtain a single final merged plot, as shown below.</p>
-    </section>
+      <p> <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb"> Notebook 5 </a> features scatterplots for all US states, showcasing their GDP per Capita plotted against the Percent of Population with  a Bachelor’s degree. The following code was used to create these plots.</p>
+      <img src="fig18.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+      <p>Further analysis required identifying the counties with the highest values of GDP per Capita and Percent of Population with a Bachelor’s degree. As you can see below, the original dataframe was sorted into two separate data frames with the 25 highest x and y-values, respectively. The code for the scatterplot was modified to include labels for these counties, showing the US state from which they belong to. </p>
+      <img src="fig19.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+      <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb">Notebook 5 </a> we also found the states with counties that were amongst the highest GDP per Capita’s and Education Attainment. Below, the ‘common_values’ set is used to store these states and eliminate duplicates. It is then converted to a list, and then the states extrapolated from their numbers using the data frame created in <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB2%20Creation%20of%20a%20final%20Data%20Frame.ipynb"> Notebook 2 </a> .</p>
+      <img src="fig20.png" alt="Fig 3" style="width: 50%; max-width: 800px; display: block; margin: 0 auto;">
+    
+      <section>
+        <h3>6) Forecasting</h3>
+        <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/main/notebooks/NB3%20Forecasting.ipynb"> Notebook 3</a> we only focus on the forecasting of the education and GDP trends. To do such analysis we used longer temporal data frames that could picture the situation in the US in the past. The economic data is retrieved from the World Bank, while the college percentage is retrieved from a .xlsx file from the Census.gov. We opened the data and we plotted it out. We had to be careful with the units of measurements. In the first case, for the GDP, the levels were ranging from 200 000 to 600 000, while in the second, the percentages were shifting from 5 to 40. After that, we immediately noticed a positive trend in both elements, as we noted in the analysis. The actual forecast was made through the "Prophet" library, that automatically generates a forecast for the period set. The graph generated shows the forecast with a upper and lower error margin. Before that, we made sure to adapt the data frame to the requirements of the library, i.e. renaming the date to "ds" (after having transformed it to date-time format) and y as the variable.</p>
+        <img src="fig21.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+        <p>We also decided to plot out a line on the year 2020 to highlight the pandemic effects. The code follows.</p>
+        <img src="fig22.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+        <p>Lastly, we merged once again the two forecasts to obtain a single final merged plot, as shown below.</p>
+        <img src="fig23.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+      </section>
+
     <section>
-      <h4>Issues and Challenges</h4>
+      <h3>Issues and Challenges</h3>
       <ol style="margin-left: 20px;">
         <li>From the Census Bureau, some counties had different percentages of educational attainment
           <ol type="a">
@@ -161,9 +253,9 @@
       </ol>      
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2023 Data Detectives</p>
+    <p style="margin-top: 50px;">2023 Data Detectives</p>
+    <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
   </footer>
 </body>
 </html>
