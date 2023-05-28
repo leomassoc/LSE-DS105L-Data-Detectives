@@ -32,81 +32,156 @@
       text-decoration: underline;
     }
 
-    /* Header */
-    header {
-      background-color: #007bff;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        /* Header */
+        header {
+          position: relative;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+        .banner-overlay {
+          background-image: url('LSE globe banner.jpeg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat; /* Prevent repeating the background image */
+          height: 200px;
+          width: 100%;
+          text-align: center;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-    /* Navigation */
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+        .banner-overlay::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
 
-    nav ul li {
-      display: inline;
-      margin: 0 10px;
-    }
+        .header-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          height: 100%;
+        }
 
-    nav ul li a {
-      display: inline-block;
-      padding: 10px;
-      color: #007bff;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
+        .banner-title {
+          margin: 0;
+          font-size: 32px;
+          font-weight: bold;
+          margin-top: 140px;
+          margin-bottom: -20px; /* Adjust the margin-bottom value to reduce the space */
+          filter: brightness(1.2); /* Increase brightness */
+        }
 
-    nav ul li a:hover {
-      color: #004aad;
-    }
+        header .logo {
+          height: 90px;
+          margin-bottom: 100px; /* Adjust the margin-bottom value to reduce the space */
+          filter: brightness(1.2); /* Increase brightness */
+        }
 
-    /* Main content */
-    main {
-      background-color: #fff;
-      padding: 20px;
-      margin-top: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
 
-    section {
-      margin-bottom: 40px;
-    }
+        /* Navigation */
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          background-color: hwb(0 0% 100% / 0.91); /* Change to match the banner overlay */
+          border-bottom: 1px solid #ccc;
+        }
 
-    /* Footer */
-    footer {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      margin-top: 20px;
-    }
+
+        nav ul li {
+          display: inline;
+          margin: 0 10px;
+        }
+
+        nav ul li a {
+          display: inline-block;
+          padding: 10px;
+          color: #fff; /* Change to match the banner title color */
+          font-weight: bold;
+          text-transform: uppercase;
+          transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: #e6e6e6; /* Change to a slightly lighter shade for hover effect */
+          background-color: rgba(101, 66, 66, 0.1); /* Add a hover background color */
+        }
+
+
+        /* Main content */
+        main {
+          background-color: #fff;
+          padding: 20px;
+          margin-top: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+          margin-bottom: 40px;
+        }
+
+        section img {
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+          background-color: rgba(0, 0, 0, 0.836); /* Add a hover background color */
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+          margin-top: 20px;
+        }
+        footer p {
+          margin-bottom: 0px; /* Increase the margin-bottom value to lower the text */
+        }
+
+        footer .logo {
+          height: 90px;
+          filter: brightness(1.2);
+          margin-bottom: 10px; /* Add margin to separate the logo from the text */
+        }
+
+        footer a {
+          color: #fff;
+          margin: 0 5px;
+        }
+
+        footer a:hover {
+          text-decoration: underline;
+        }
   </style>
 </head>
 <body>
   <header>
-    <h1>Should You Drop Out?</h1>
-  </header>
-  
+    <div class="banner-overlay">
+      <div class="header-content">
+        <h1 class="banner-title">Should You Drop Out?</h1>
+        <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
+      </div>
+    </div>
+  </header>  
+
   <nav>
     <ul>
       <li><a href="project-description.html">Project Description</a></li>
       <li><a href="data.html">Data</a></li>     
-      <li><a href="analysis.html">Analysis</a></li>
-      <li><a href="results.html">Results & Conclusions</a></li>
+      <li><a href="analysis.html">Analysis & Results</a></li>
+      <li><a href="results.html">Implications</a></li>
       <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
       <li><a href="authors.html">Authors</a></li>
       <li><a href="references.html">References</a></li>
+    </ul>
   </nav>
 
   <main class="container">
@@ -124,7 +199,40 @@
           <img src="fig11.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
         </section> 
       
-        
+        <section>
+          <h3>Is it the same everywhere?</h3>
+          <p>We analysed the same trends in many other states to verify that our hypothesis (i.e., that education plays a positive role in defining one’s income).</p>
+          <p>Our research has led to the confirmation of a positive relationship between these two variables, and this is shown below.</p>
+          <p>Examples of states with the GDP per capita plotted against education attainment at a state level are plotted below, with individual counties as our data points</p>
+          <section style="text-align: center;">
+            <img src="fig6.png" alt="Fig 3" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
+            <p class="chart-description" style="text-align: center; color: #888; font-size: 14px;">Figure 1: scatterplots for the 3 highest populated states in the US (California, Texas and Florida), with their correlation coefficients of 0.23, 0.10, 0.09 respectively.</p>
+          </section>
+          <p>By finding the correlation coefficient for each state, through compiling all the counties within each state, we test our hypothesis.</p>
+          <p>The first impression we get from these first three scatterplots, is that the percent of the population with a Bachelor’s degree is observably unchanging, compared to GDP per Capita.</p>
+          <p>Despite this, we found that average correlation coefficient to be approximately +0.118. This is not evidence of a strong relationship between our two variables, but it does work in favour of our theory. We now move on to examine the 5 states with the highest correlation coefficient to further dissect the data. </p>
+          <section style="text-align: center;">
+            <img src="fig7.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+            <p class="chart-description" style="text-align: center; color: #888; font-size: 14px;">Figure 2: Scatter plots for State 10 (Delaware): pop. 1,018,396, 15 (Hawaii); pop. 1,440,196, 2 (Alaska) pop. 733,583, 32 (Nevada); pop. 3,177,772 , 44 (Rhode Island): pop. 1,093,734</p>
+          </section>   
+          <p>These states are characteristically relatively lowly  populated states, and not necessarily hubs of economic activity. Their combined population total is (calculate). 
+            The line of best fit is used to help visualize relationships between the x and y variables. Here, its clear the 5 states with the highest correlation coefficients are also those with very few counties. Hence, we cannot rely on these plots to draw a reliable conclusion.</p>
+          <p>On the other hand, we repeat the process for the states with the lowest values of correlation coefficients.</p>
+          <section style="text-align: center;">
+            <img src="fig8.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+            <p class="chart-description" style="text-align: center; color: #888; font-size: 14px;">Figure 3: State 46 (South Dakota) ; 909,824, State 50 (Vermont): pop. 647,064, 35 (New Jersey); 9,261,699 , 54 (West Virginia); pop.1,775,156, 33 (New Hampshire): pop. 1,395,231. Combined population of these states is nearly double than the total for the 5 states with the lowest correlation coefficients. (13,988,974)</p>
+          </section> 
+          <p>These states do have a greater number of counties, which makes inferences made from their correlation coefficient are more reliable than in the previous example. The trend for these states if for the Percent of the Population with a Bachelor’s degree to actually decline slightly, when GDP per Capita increases</p>
+    
+          <p>We believe that our calculation of the average correlation coefficient between GDP per Capita and Education attainment, of 0.118, does a positive relationship. However, 0.118 is still very close to zero, and does not indicate that there is a strong relationship. As for the nature of this relationship, further analysis is required to determine whether GDP per Capita is a determinant of the Higher education attainment of states, or the other way around.</p>
+          <section style="text-align: center;">
+            <img src="fig9.png" alt="Fig 3" style="width: 80%; max-width: 900px; display: block; margin: 0 auto;">
+            <p class="chart-description" style="text-align: center; color: #888; font-size: 14px;">Figure 4 shows scatterplots of all US counties’ GDP per Capita plotted against their Percent of Population with a Bachelor’s degree, with the gradient of the dots determined by the number of educational institutions of each county.</p>
+          </section> 
+          <p>Firstly, these plots are evidence of a correlation between the number of educational institutions and the percent of population with a Bachelor’s degree. Judging the educational attainment of counties by these two variables is therefore reasonable.</p>
+          <p>We see that what we might call outlier counties, with very high GDP per capita’s  are  belong to California, State 11, state 22, state 36. The counties with the highest educational attainment belong to state 48, state 37. The only states with counties in the top 25 of GDP per capita and Percent of Population with a Bachelor’s degree are state 8, 48 , 51, 17, 8, 13, 36, 37, 40. We can deduct that these states feature counties with a balance between GDP and higher education attainment.i.e. 9 states out of 25. ( 36%). We believe that this does work in favour of the hypothesis that education is a key determinant of GDP per capita.</p>
+          </section>
+            
         <section>
         <h3>Research Limitations</h3>
         <ol>
@@ -143,7 +251,8 @@
   </main>
 
   <footer>
-    <p>&copy; 2023 Data Detectives</p>
+    <p style="margin-top: 50px;">2023 Data Detectives</p>
+    <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
   </footer>
 </body>
 </html>
