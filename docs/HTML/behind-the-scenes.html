@@ -186,22 +186,24 @@
 
   <main class="container">
     <section>
-      <h2>Behind the Scenes</h2>
-      <p>In this page we collected the “Behind the Scenes” of our research, i.e., the code-intense part that highlights the reliability of our research and methods. The tasks has been divided equally (you can check the <a href="authors.html">Authors Page</a>) to ensure diversity of ideas and opinions and avoiding bias of any kind in the research.</p>
-      <p>The <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/tree/main/notebooks">notebooks </a> of our repository has been organised in order to provide different aspects and steps in our research and do not necessarily reflect the order of neither this page nor the analysis one.</p>
+      <h2>Unveiling the Reliability of Our Research and Methods</h2>
+      <p>Welcome to the fascinating world behind the scenes of our research endeavor. In this section, we delve into the code-intensive aspects that underpin the reliability of our findings and methodologies. Our team of authors, committed to ensuring a diversity of ideas and perspectives, has diligently divided the tasks involved. This meticulous approach guarantees a comprehensive exploration, free from any biases that may hinder the integrity of our research.</p>
+      <span style="font-style: italic; color: #999999;">The <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/tree/main/notebooks">notebooks</a> of our repository has been organised in order to provide different aspects and steps in our research and do not necessarily reflect the order of neither this page nor the analysis one.</span>
+    </section>  
       <h3>1) Data Collection</h3>
       <section>
-        <p>Our main and initial source was the <a href="https://www.census.gov/"> Census.gov </a> API, a comprehensive database on different variables describing the US society. To proceed with our research we initially requested the JSON file using the API Key. The API provided us with the percentage of educational attainment and the number of educational firms in each county. </p>
+        <p>Our main and initial source was the <a href="https://www.census.gov/"> Census.gov </a> API, a treasure trove of comprehensive data capturing various variables that illuminate the intricacies of US society. To kick-start our research, we accessed the API's JSON file using the provided API Key. This invaluable resource furnished us with crucial information on the percentage of educational attainment and the number of educational firms across different counties. </p>
         <section style="text-align: center;">
           <img src="fig12.png" alt="Fig 12" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
         </section> 
-        <p>We decided to change the output to a Pandas data frame for easier layout.</p>
-        <p>We also used some sources originally presented as CSV or Excel files. We easily imported and opened them using once again the Pandas library.</p>
+        <p>To streamline our analysis, we converted the obtained data into a Pandas data frame, facilitating a more organized and user-friendly format.</p>
+        <p>In addition to the Census.gov API, we incorporated other valuable sources available in CSV or Excel formats. Leveraging the versatility of the Pandas library, we seamlessly imported and processed these files for further examination.</p>
         <img src="fig13.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
 
       </section>    
       <h3>2) Data Cleaning</h3>
-      <p>We removed unnecessary columns and kept only data from California for initial analysis. Here are the steps we took to clean the data from the ACS survey database:</p>
+      <p>To establish a solid foundation for our analysis, we undertook meticulous data cleaning procedures. We pruned unnecessary columns, focusing solely on California's data for our initial exploration. The following steps outline our data cleaning process for the American Community Survey (ACS) survey database:
+      </p>
       <img src="fig14.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
     
       <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the Bureau of Economic data.</p>
@@ -236,22 +238,32 @@
         <p>Lastly, we merged once again the two forecasts to obtain a single final merged plot, as shown below.</p>
         <img src="fig23.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
       </section>
+     
 
-    <section>
-      <h3>Issues and Challenges</h3>
-      <ol style="margin-left: 20px;">
-        <li>From the Census Bureau, some counties had different percentages of educational attainment
-          <ol type="a">
-            <li>To solve the issue, if we encountered two or more rows with the same county and state code, we took the average percentage and kept only one row </li>
-          </ol>
-        </li>
-        <li>From one dataset to the other, we noticed a significant loss in rows: although this might seem an issue, it could just frame reality as there must be counties without educational institutions.
-          <ol type="a">
-            <li>We proceed our research with 1393 counties instead of the actual 3143, as we thought that the data available are still reliable.</li>
-          </ol>
-        </li>
-      </ol>      
-    </section>
+      <h3>7) Unleashing the Web: Alua's Journey of Learning HTML and CSS</h1>
+
+      <p>As a student at the prestigious London School of Economics, my passion for Economics has driven me to explore the vast realms of data science. Amidst this journey, I encountered a unique opportunity to delve into website design using HTML and CSS. Opting for the road less traveled, I embraced the challenge of learning HTML coding to create captivating web pages. In this analysis, I will recount my learning journey, discussing the challenges I faced, the implications of mastering HTML and CSS, and my plans to leverage this newfound knowledge.</p>
+      <p>Starting out, I was well-aware of the alternative route: utilizing Markdown to construct websites. However, I felt an undeniable curiosity to explore the intricacies of HTML and CSS, despite knowing it would be an arduous undertaking. Armed with determination, I embarked on my HTML and CSS odyssey.</p>
+      <p>Learning HTML and CSS presented its fair share of challenges, pushing me to think creatively and problem-solve. Some notable hurdles I encountered included:</p>
+      <ol>
+        <li>Syntax Mastery: The fundamental syntax of HTML and CSS was entirely new to me, demanding an understanding of tags, attributes, and selectors. Navigating through the labyrinth of opening and closing tags required precision and attention to detail.</li>
+        <li>Design Consistency: Achieving a visually appealing and consistent design across various web pages proved to be challenging. Understanding the box model, positioning elements, and employing effective layouts required meticulousness and an eye for detail.</li>
+        <li>Responsive Design: Crafting websites that adapt seamlessly to different devices and screen sizes introduced the concept of responsive design. Learning about media queries and implementing flexible layouts became essential skills in this mobile-driven era.</li>
+        <li>Cross-Browser Compatibility: Ensuring a consistent user experience across different web browsers posed a significant challenge. Addressing browser-specific quirks and optimizing website performance required extensive testing and debugging.</li>
+      </ol>
+      <p>Mastering HTML and CSS holds immense implications, both academically and professionally:</p>
+      <ul>
+        <li>Enhanced Digital Communication: With the ability to create visually compelling web pages, I can effectively convey complex economic concepts and data-driven insights to a wider audience. This facilitates better digital communication and knowledge dissemination.</li>
+        <li>Professional Opportunities: Proficiency in website design opens doors to various career opportunities. The intersection of data science, economics, and web design equips me with a unique skill set valued in industries such as fintech, e-commerce, and digital marketing.</li>
+        <li>Improved User Experience: By implementing user-centered design principles and creating intuitive interfaces, I can enhance the user experience of websites, making them more engaging and accessible. This skill is vital in today's digital landscape, where user satisfaction drives success.</li>
+      </ul>
+      <p>Armed with a solid foundation in HTML and CSS, I plan to leverage this knowledge in multiple ways:</p>
+      <ol>
+        <li>Academic Projects: I will employ HTML and CSS to enhance the presentation of my academic projects and research findings. This will allow me to present data-driven insights in a visually compelling manner, improving the effectiveness of my work.</li>
+        <li>Personal Portfolio: Building a personal website will serve as a platform to showcase my academic achievements, skills, and projects. By applying responsive design and creative layout techniques, I can leave a lasting impression on potential employers and collaborators.</li>
+        <li>Collaborative Projects: Collaborating with fellow students and professionals, I can contribute to the design and development of websites, bridging the gap between data-driven insights and user experience. This multidisciplinary approach will foster innovation and generate impactful solutions.</li>
+      </ol>
+      <p>My journey of learning HTML and CSS has been both challenging and rewarding. Overcoming the hurdles, I have acquired a powerful set of skills that will enable me to communicate complex economic ideas effectively, unlock</p>
   </main>
   <footer>
     <p style="margin-top: 50px;">2023 Data Detectives</p>

@@ -186,13 +186,13 @@
 
   <main class="container">
     <section>
-      <h2>Analysis</h2>
+      <h2>Education-Salary Trend since 1940: A Comprehensive Examination
+      </h2>
       <p>
-        For our analysis, we will critically examine the education-salary trend since 1940, along with a small forecast for the next 10 years.
+        In this research analysis, we will delve into the intriguing relationship between education and salary trends in the United States since 1940. By critically examining historical data and providing a small forecast for the next 10 years, we aim to shed light on the evolving dynamics of education and its impact on economic growth.
       </p>
-      <p>The historical data already shows a strong incremental correlation between the two elements, with the GDP p.c. rising, with a slopes due to cyclical recession, especially prominent around the 2008 financial crisis and 2020 COVID-19 Pandemic.</p>
-      <p>The black dots represent the annual value, the blue line is the actual forecast with the marginal error indicated in the light blue shade.</p>
-      <p>Also, we have marked the pandemic year 2022, to show the negative impact it had on both elements.</p>
+      <p><strong>Historical Data Insights:    </strong> Our analysis reveals a compelling incremental correlation between education and salary, with a particular focus on GDP per capita. Over the years, the GDP per capita has exhibited a consistent upward trajectory, albeit with noticeable slopes due to cyclical recessions. Notably, the effects of the 2008 financial crisis and the 2020 COVID-19 pandemic are particularly pronounced in the data.</p>
+      <p>To provide a clear visual representation of our findings, we have prepared several figures. In Fig. 1, we present a comprehensive overview of the US GDP per capita from the past to the projected 2020-2030 period. The impact of the COVID-19 year is clearly highlighted by a red line. Similarly, Fig. 2 showcases the percentage of college-educated individuals in the US over the years, also with a forecast for the 2020-2030 period.</p>
     </section>
 
     <section style="text-align: center;">
@@ -205,40 +205,52 @@
         <p class="chart-description" style="text-align: center; color: #888; font-size: 14px;">Fig. 2: A first look at US College Percentage over the years with a small forecast of the 2020-2030 period. COVID-19 year is marked by a red line.</p>
     </section>
 
-    <p>A correlation is evident. But is it strictly related? Is economic increase just a common trend over time? How can we be sure that the economic increase is strictly due to the percentage of college education? Is there a similar trend in every state in the United States?</p>
+    <p><strong>Examining the Correlation:    </strong> While a correlation between education and economic growth is evident, we delve deeper to explore its strict nature. We pose essential questions: Is economic growth solely a common trend over time? How can we establish a causal relationship between the increase in economic prosperity and the percentage of college education? Furthermore, we investigate whether this trend is consistent across all states in the United States.
+
+    </p>
    
     <section style="text-align: center;">
         <img src="fig3.png" alt="Fig 3" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
         <p class="chart-description" style="text-align: center; color: #888; font-size: 14px;">Fig. 3: College Percentage and GDP per capita (constant 2015 US$) and forecasts for the 2023-2033 period.</p>
     </section>
 
-    <p>A correlation is evident. But is it strictly related? Is economic increase just a common trend over time? How can we be sure that the economic increase is strictly due to the percentage of college education?</p>
-    <p>You can also notice that the GDP trend slightly fluctuates every couple of year (1969-79) or more. We are not sure if this is due to cyclical recession or external factors. In the Education data, this trend is slightly less present. As we will discuss in <a href="results.html">Implications </a> , we could see if events that had an impact on GDP also influences the college percentage but we would need more data on which events are responsible for an economic decrease.</p>
-    <p>We have now verified that at a national level and over the years both GDP and Educational Attainment rate increased in the United States. This is undoubtedly a positive phenomenon, meaning that the two are for sure related as the richer the country, the higher the education percentage.</p>
 
-    <p>We could end our research here but we are still not satisfied enough we want to cover some other points, such as:</p>
-    <ul>
-      <li>Does this trend appear in all states (of the US)?</li>
-      <li>Is this trend the same for everyone (we use data on educational attainment and GDP per race to understand the possible “returns to education” for different counties based on racial majority) </li>
-      <li>Which is the state with the highest correlation?</li>
-    </ul>
-    <p>While we acknowledge a correlation, we proceed to analyse the data at a county level, where the coefficient is higher.</p>
-    
+    <p><strong>Understanding Fluctuations:</strong> In our examination of the data, we observe slight fluctuations in the GDP trend every few years, such as during the 1969-1979 period. While the cause of these fluctuations is not definitively established, we speculate on potential factors like cyclical recessions or external influences. To gain deeper insights, we would require additional data on specific events that lead to economic downturns.
+
+    </p>
+    <p><strong>National Level Analysis:</strong> Having verified the increase in both GDP and educational attainment at a national level over the years, we can affirm that these phenomena are undeniably positive. It is clear that there is a relationship between the two, as a wealthier country tends to exhibit a higher percentage of educated individuals.</p>
+
+    <p><strong>Further Dimensions: </strong>
+      While the national-level analysis provides valuable insights, our research does not end there. We are determined to cover additional points to broaden our understanding:
+      
+      </p>
+    <ol>
+      <li>Regional Analysis: Does this correlation appear consistently across all states in the US?</li>
+      <li>Differential Effects: Does this trend vary based on racial demographics? We examine educational attainment and GDP per race to understand the potential "returns to education" for different counties based on their racial majority. </li>
+      <li>Identifying Correlation Leaders: Which state exhibits the highest correlation between education and economic growth?</li>
+    </ol>
+    <p><strong>County-Level Analysis: </strong>Acknowledging the correlation, we further analyze the data at a county level, where the correlation coefficient is higher, indicating a stronger relationship between education and salary.</p>
+
     <section>
       <section>
         <h2>Results</h2>
-        <p> We start off by retrieving the education data through the Census API (to keep this page unpolluted, we left a detailed and coded explanation in the “Behind the Scenes” page). Initially, we looked at the relation between Bachelor’s degree and GDP p.c. amongst the counties of California. In our research, we also considered the number of educational institutions (kindergarten, primary, middle, high school, colleges, institutes and universities) to measure the investments made by the counties, states and the United States government into education.</p>
-        <p>Data are retrieved from three different datasets and then merged: we used the "GEO_ID" (the geographical variable used by the census) to complete the merging process.</p>
-        <p>In Notebook 1, we obtained a single dataframe for the county of California. We decided to plot it to visually analyse the first results. The correlation coefficient is 0.722, already quite significative.</p>
+        <p> <strong>Collection and Merging:</strong> 
+          To conduct our analysis, we utilized the Census API to retrieve education data. A detailed and coded explanation of this process can be found in the "Behind the Scenes" section. We merged data from three distinct datasets using the "GEO_ID" variable, a geographical identifier utilized by the census, ensuring a comprehensive and cohesive dataset.</p>
+        <p><strong>Initial Findings: </strong> In Notebook 1, we focused on examining the relationship between Bachelor's degree attainment and GDP per capita among the counties of California. Additionally, we considered the number of educational institutions, spanning from kindergarten to universities, as a measure of investment in education by counties, states, and the US government.
+        </p>
+        <p><strong>Visual Representation of County-Level Data:
+        </strong> The figure below presents a visual representation of the correlation between education and salary at the county level, specifically for California. Notably, the correlation coefficient stands at a remarkable 0.722, indicating a significant relationship between education and economic prosperity.</p>
       </section>
 
       <section>
-        <p>Both values were recorded in 2017: unfortunately we are missing longer temporal datasets.</p>
-          <img src="fig4.png" alt="Fig 4" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
-          <p>The correlation between the two is more prominent on a state level (California). We proceed to show the trends at a state level: the correlation is not as strong as at the county level. We will investigate the possible reasons in the next paragraphs.</p>
+        <span style="font-style: italic; color: #999999;">Both values were recorded in 2017: unfortunately we are missing longer temporal datasets so we cannot analyse if the situation was different in the past.</span>
+      </section>
+      </section>
+        <img src="fig4.png" alt="Fig 4" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
+          <p><strong>State-Level Trends:</strong>Transitioning to a state-level analysis, we observe that the correlation between education and salary is not as strong as at the county level. Fig. 5 provides an insightful visualization of the state-level trends, highlighting the nuances and potential reasons for the varying correlations.</p>
 
           <img src="fig5.png" alt="Fig 5" style="width: 60%; max-width: 600px; display: block; margin: 0 auto;">
-          <p>As per the remainder of the research, find the details of how we got to these graphs in the <a href="behind-the-scenes.html">Behind the Scenes</a> section.</p>
+          <p>For a detailed account of the methodology employed in generating these graphs and data analysis, please refer to the <a href="behind-the-scenes.html">Behind the Scenes</a> section.</p>
       </section>
 
     </section>

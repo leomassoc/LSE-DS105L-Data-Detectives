@@ -186,9 +186,11 @@
 
   <main class="container">
     <section>
-      <h2>Data</h2>
+      <h2>Comprehensive Data Sources and Analysis for Educational Levels, Salaries, and GDP in U.S. Counties
+
+      </h2>
       <p>
-        For the purpose of conducting our project, we refer to the data from <strong>Census.Gov</strong> that provides information on educational levels, educational institutions, and salaries in U.S. counties. First, educational levels represent the percentage of people above 25 years old with a Bachelor's degree. Then, from the "Firms" API, we were able to retrieve the number of educational centers per county. Lastly, we used an Excel file from the Economic Bureau to retrieve GDP per county, representative of our salary data. From the Census database, we have chosen two datasets – the Economic Census Survey (ECS) and the American Community Survey (ACS) – containing our variables of interest.
+        As part of our research project, we have meticulously gathered data from various authoritative sources to explore educational levels, educational institutions, salaries, and GDP in U.S. counties. The following sections outline the data sources we utilized, the specific datasets we selected, and the tools we employed to enhance the accuracy and comprehensiveness of our findings.
       </p>
     <section>
 
@@ -198,13 +200,13 @@
         <strong>GDP:</strong>
         <ul>
           <li>
-            For final data frame: .xlsx file from the BEA (Bureau of Economic Analysis), available <a href="https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas"> here</a>, set for 2017 and for GDP per Capita in each County. Called us_gdp_2009-18.
+            For final data frame: Excel spreadsheet file from the BEA (Bureau of Economic Analysis), available <a href="https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas"> here</a>, set for 2017 and for GDP per Capita in each County. 
           </li>
           <li>
-            For Forecasting Data: .csv file from the World Bank, available <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=US">here</a>, GDP per capita from 1960 adjusted to 2015 inflation rate. Called gdp_us_over_time.csv.
+            For Forecasting Data: CSV file from the World Bank, available <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=US">here</a>, GDP per capita from 1960 adjusted to 2015 inflation rate. 
           </li>
           <li>
-            For race analysis: .xlsx file from the US Department of Labor, available <a href="https://www.dol.gov/agencies/ofccp/about/data/earnings/race-and-ethnicity">here </a>, used only NATIONAL level data, and from a limited number of races for a general overview. Called gdp_per_race.xlsx
+            For race analysis: .xlsx file from the US Department of Labor, available <a href="https://www.dol.gov/agencies/ofccp/about/data/earnings/race-and-ethnicity">here </a>, used only national level data, and from a limited number of races for a general overview. 
           </li>
         </ul>
       </li>
@@ -216,10 +218,10 @@
             For final data frame: API query from the US Census Bureau, available <a href="https://www.census.gov/data/developers/data-sets.html">here </a>, set for Educational Firms and percentage of citizens with a Bachelor’s Degree. 
           </li>
           <li>
-            For Forecasting Data: .xlsx file from the US Census Bureau, available <a href="https://www.census.gov/data/tables/time-series/demo/educational-attainment/cps-historical-time-series.html"> here</a> , set for all ages and sex. Called college_percentage.xlsx
+            For Forecasting Data: .xlsx file from the US Census Bureau, available <a href="https://www.census.gov/data/tables/time-series/demo/educational-attainment/cps-historical-time-series.html"> here</a> , set for all ages and sex. 
           </li>
           <li>
-            For race analysis: .xlsx file from the US Census Bureau, available <a href="https://www.census.gov/data/tables/2022/demo/educational-attainment/cps-detailed-tables.html"> here </a>, set for both sexes and diversifies by race. Called edu_perc_race.xlsx
+            For race analysis: Excel spreadhseet from the US Census Bureau, available <a href="https://www.census.gov/data/tables/2022/demo/educational-attainment/cps-detailed-tables.html"> here </a>, set for both sexes and diversifies by race.
           </li>
         </ul>
       </li>
@@ -227,14 +229,15 @@
         <strong>UTILITY:</strong>
           <ul>
             <li>
-              GEO_ID code to COUNTY/STATE name converter: .tsv and .xslx file from @ChuckConnel’s public GitHub repository, available <a href="https://github.com/amartino1-lse/articles/blob/master/fips2county.tsv"> here </a>. Called fips2county.tsv
+              Geographical ID code to county/state name converter: TSV and Excel files from Chuck Connel’s public GitHub repository, available <a href="https://github.com/amartino1-lse/articles/blob/master/fips2county.tsv"> here </a>. 
             </li>
       </li>
            
     </section>
     
     <p>
-      As indicators of working success, we decided to use GDP per capita (referred to as GDP p.c.), as it is an efficient measure of citizens' performance. While we acknowledge that money is not everything in life and other factors are important (e.g., job impact on the world, job satisfaction, popularity), they are subjective and hard to retrieve. Therefore, we will focus on GDP p.c. as a salary indicator, and for measuring higher education levels, we will use the Census Bureau data on College/Bachelor’s Degrees attainment, providing us with a basic understanding of educational attainment in the country.
+      
+In order to assess indicators of success in the workforce, we have chosen to utilize GDP per capita (referred to as GDP p.c.) as a reliable measure of individual performance. While we recognize that monetary factors do not encompass the entirety of a fulfilling life and that other subjective elements such as job impact, satisfaction, and popularity are important, they can be challenging to quantify. Consequently, our primary focus will be on GDP per capita as a metric for salary evaluation. To gauge higher education levels, we will rely on data from the Census Bureau pertaining to College/Bachelor's Degrees attainment. This dataset will provide us with a foundational understanding of educational achievement across the country.
     </p>
   </main>\
 
