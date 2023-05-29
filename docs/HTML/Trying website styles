@@ -9,7 +9,7 @@
       line-height: 1.5;
       margin: 0;
       padding: 0;
-      background-color: #f1f1f1;
+      background-color: #322c28f0;
       color: #333;
     }
 
@@ -32,134 +32,148 @@
       text-decoration: underline;
     }
 
-        /* Header */
-        header {
-          position: relative;
-        }
+    /* Header */
+    header {
+      position: relative;
+    }
 
-        .banner-overlay {
-          background-image: url('LSE globe banner.jpeg');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat; /* Prevent repeating the background image */
-          height: 200px;
-          width: 100%;
-          text-align: center;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+    .banner-overlay {
+      background-image: url('51955360542_f3ebf62e95_o.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; /* Prevent repeating the background image */
+      height: 200px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .banner-overlay::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-        }
+    .banner-overlay::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-        .header-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          color: #fff;
-          height: 100%;
-        }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      height: 100%;
+    }
 
-        .banner-title {
-          margin: 0;
-          font-size: 32px;
-          font-weight: bold;
-          margin-top: 140px;
-          margin-bottom: -20px; /* Adjust the margin-bottom value to reduce the space */
-          filter: brightness(1.2); /* Increase brightness */
-        }
+    .banner-title {
+      margin: 0;
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 0px;
+      margin-bottom: 0px; /* Adjust the margin-bottom value to reduce the space */
+      filter: brightness(1.2); /* Increase brightness */
+    }
 
-        header .logo {
-          height: 90px;
-          margin-bottom: 100px; /* Adjust the margin-bottom value to reduce the space */
-          filter: brightness(1.2); /* Increase brightness */
-        }
+    header .logo {
+      height: 90px;
+      margin-bottom: 100px; /* Adjust the margin-bottom value to reduce the space */
+      filter: brightness(1.2); /* Increase brightness */
+    }
 
+    /* Navigation */
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: hwb(0 0% 100% / 0.91); /* Change to match the banner overlay */
+      border-bottom: 1px solid #ccc;
+    }
 
-        /* Navigation */
-        nav ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-          background-color: hwb(0 0% 100% / 0.91); /* Change to match the banner overlay */
-          border-bottom: 1px solid #ccc;
-        }
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
 
+    nav ul li a {
+      display: inline-block;
+      padding: 10px;
+      color: #fff; /* Change to match the banner title color */
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
 
-        nav ul li {
-          display: inline;
-          margin: 0 10px;
-        }
+    nav ul li a:hover {
+      color: #e6e6e6; /* Change to a slightly lighter shade for hover effect */
+      background-color: rgba(101, 66, 66, 0.1); /* Add a hover background color */
+    }
 
-        nav ul li a {
-          display: inline-block;
-          padding: 10px;
-          color: #fff; /* Change to match the banner title color */
-          font-weight: bold;
-          text-transform: uppercase;
-          transition: color 0.3s;
-        }
+    /* Main content */
+    main {
+      background-color: #fff; /* Remove the background color */
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: none; /* Remove the border */
+    }
 
-        nav ul li a:hover {
-          color: #e6e6e6; /* Change to a slightly lighter shade for hover effect */
-          background-color: rgba(101, 66, 66, 0.1); /* Add a hover background color */
-        }
+    section {
+      margin-bottom: 40px;
+    }
 
+    section h2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-        /* Main content */
-        main {
-          background-color: #fff;
-          padding: 20px;
-          margin-top: 20px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    section p {
+      text-align: center;
+    }
 
-        section {
-          margin-bottom: 40px;
-        }
+    section img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-        section img {
-          max-width: 100%;
-          margin-bottom: 20px;
-        }
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.836); /* Add a hover background color */
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      margin-top: 20px;
+    }
 
-        /* Footer */
-        footer {
-          background-color: rgba(0, 0, 0, 0.836); /* Add a hover background color */
-          color: #fff;
-          padding: 10px;
-          text-align: center;
-          margin-top: 20px;
-        }
-        footer p {
-          margin-bottom: 0px; /* Increase the margin-bottom value to lower the text */
-        }
+    footer p {
+      margin-bottom: 0px; /* Increase the margin-bottom value to lower the text */
+    }
 
-        footer .logo {
-          height: 90px;
-          filter: brightness(1.2);
-          margin-bottom: 10px; /* Add margin to separate the logo from the text */
-        }
+    footer .logo {
+      height: 90px;
+      filter: brightness(1.2);
+      margin-bottom: 20px; /* Add margin to separate the logo from the text */
+    }
 
-        footer a {
-          color: #fff;
-          margin: 0 5px;
-        }
+    footer a {
+      color: #fff;
+      margin: 0 5px;
+    }
 
-        footer a:hover {
-          text-decoration: underline;
-        }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -167,7 +181,6 @@
     <div class="banner-overlay">
       <div class="header-content">
         <h1 class="banner-title">Should You Drop Out?</h1>
-        <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
       </div>
     </div>
   </header>  
@@ -176,57 +189,42 @@
     <ul>
       <li><a href="project-description.html">Project Description</a></li>
       <li><a href="data.html">Data</a></li>     
+      <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
       <li><a href="analysis.html">Analysis & Results</a></li>
       <li><a href="results.html">Implications</a></li>
-      <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
       <li><a href="authors.html">Authors</a></li>
       <li><a href="references.html">References</a></li>
     </ul>
   </nav>
-  <main class="container">
-    <section>
-      <h2>Project Description</h2>
-      <h3>Introduction and Motivation</h3>
-      <p>
-        Does education still matter in the XXI century? Do we need a Bachelor’s degree to succeed in the professional world? Is inequality linked into education or salary?
-      </p>
-      <p>
-        These are some of the questions we have been asking ourselves while carrying out our research. We decided to analyse the impact that education (specifically the percentage of people that graduated from university with a Bachelor’s Degree) in the United States, as its Census database is easily accessible through API queries and csv files. As you will be able to see in the “Behind the Scenes” page we diversified our sources, after a careful factcheck and reliability control. 
-      </p>
-      <p>
-        The results will not be without caveats (as in all researches), but are likely to represent closely reality: for further notes on the issues that we encountered, please visit this page.
-      </p>
-      <p>
-        Without further ado, we are pleased to welcome you on our DS105L group project by Data Detectives.
-      </p>
-      <img src="education-image.jpg" alt="Education">
-    </section>
 
+  <main>
     <section>
-      <h3>Does education impact our career success?</h3>
-      <p>
-        Our project aims to evaluate the effect of education on professional success. As students, we hope to investigate if education drives our future salaries and whether the time we spend at educational facilities is actually worth it in the long term.
-      </p>
-      <p>
-        The relationship between education and income is a well-studied topic in the social sciences, and researchers have used a range of methods to understand this relationship.
-      </p>
-      <p>
-        Our main hypothesis is based on the <strong>human capital theory</strong>. This theory suggests that education is an investment in an individual's human capital, which can lead to higher wages and greater earning potential over their lifetime. Human capital theory suggests that education is a key determinant of an individual's income, and that higher levels of education are associated with higher levels of income.
-      </p>
-      <p>
-        While regression analysis can be used to estimate the relationship between education and income, given we cannot control for every potential confounder, we will use correlation analysis to examine the strength of the relationship between education and income.
-      </p>
-      <p>
-        Given the limited timeframe of this project, we will focus on the United States alone to test our hypothesis.
-      </p>
-      <img src="success-chart.jpg" alt="Success Chart">
+      <h2>About the Project</h2>
+      <p>This project aims to provide insights into the impact of education on professional success. Through thorough research and analysis, we aim to help young adults make informed decisions regarding their education. By understanding the relationship between education and income, we can provide valuable information that empowers individuals to navigate their educational journey with confidence.</p>
     </section>
+    <section>
+      <h2>Data</h2>
+      <p>Explore the data we collected and analyzed to understand the factors influencing the relationship between education and income. Our comprehensive dataset covers various aspects such as access to education and income levels. Through interactive visualizations and informative statistics, you can gain a deeper understanding of how education shapes professional outcomes and economic opportunities.</p>
+    </section>
+    <section>
+      <h2>Behind the Scenes</h2>
+      <p>Learn about the methodology and techniques used to analyze the data and draw meaningful conclusions. We provide insights into our data collection process, data cleaning and preparation, as well as the statistical methods employed in our analysis. Understanding the rigorous approach we took in examining the data will give you confidence in the reliability and validity of our findings.</p>
+    </section>
+    <section>
+      <h2>Analysis & Results</h2>
+      <p>Discover the key findings and insights obtained from our analysis of the relationship between education and income. We present compelling statistics, visualizations, and interpretations that highlight the patterns, trends, and correlations within the data. By uncovering the factors that contribute to professional success, we can help individuals make informed decisions about their educational paths and future career prospects.</p>
+    </section>
+    <section>
+      <h2>Implications</h2>
+      <p>Understand the implications of our findings and how they can be used by individuals and society. We discuss the potential benefits of pursuing higher education, the role of skill development and specialization, and the importance of lifelong learning. By recognizing the broader implications of education on personal growth, social mobility, and economic prosperity, we hope to inspire individuals to invest in their education and unlock their full potential.</p>
+    </section>
+    
   </main>
-  
+
   <footer>
-    <p style="margin-top: 50px;">2023 Data Detectives</p>
-    <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
-  </footer>
+    <p style="margin-top: 30px;">2023 Data Detectives</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/LSE_Logo.svg/638px-LSE_Logo.svg.png?20110331145302" alt="Logo" class="logo" style="max-width: 25px; height: auto;">
+  </footer>  
   
 </body>
 </html>
