@@ -6,7 +6,7 @@ Does education still matter in the XXI century? Do we need a Bachelor’s degree
 
 We decided to analyse the impact that education has on individuals' salary: is it responsible for higher wages?. As you will be able to see in the [Behind the Scenes](https://htmlpreview.github.io/?https://raw.githubusercontent.com/leomassoc/LSE-DS105L-Data-Detectives/main/docs/HTML/behind-the-scenes.html) page we diversified our sources, after a careful factcheck and reliability control. 
 
-↪️ Visit our website [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/leomassoc/LSE-DS105L-Data-Detectives/main/docs/HTML/project-description.html)
+👉👉👉👉 **Visit our website** [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/leomassoc/LSE-DS105L-Data-Detectives/main/docs/HTML/project-description.html)👈👈👈👈
 
 # 👥 **Team** 
 
