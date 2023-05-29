@@ -9,7 +9,7 @@
       line-height: 1.5;
       margin: 0;
       padding: 0;
-      background-color: #f1f1f1;
+      background-color: #fff;
       color: #333;
     }
 
@@ -38,7 +38,7 @@
         }
 
         .banner-overlay {
-          background-image: url('LSE globe banner.jpeg');
+          background-image: url('51955360542_f3ebf62e95_o.jpg');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat; /* Prevent repeating the background image */
@@ -74,8 +74,8 @@
           margin: 0;
           font-size: 32px;
           font-weight: bold;
-          margin-top: 140px;
-          margin-bottom: -20px; /* Adjust the margin-bottom value to reduce the space */
+          margin-top: 0px;
+          margin-bottom: 0px; /* Adjust the margin-bottom value to reduce the space */
           filter: brightness(1.2); /* Increase brightness */
         }
 
@@ -84,7 +84,6 @@
           margin-bottom: 100px; /* Adjust the margin-bottom value to reduce the space */
           filter: brightness(1.2); /* Increase brightness */
         }
-
 
         /* Navigation */
         nav ul {
@@ -119,10 +118,11 @@
 
         /* Main content */
         main {
-          background-color: #fff;
+          background-color: #fff; /* Remove the background color */
           padding: 20px;
           margin-top: 20px;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          border: none; /* Remove the border */
         }
 
         section {
@@ -149,7 +149,7 @@
         footer .logo {
           height: 90px;
           filter: brightness(1.2);
-          margin-bottom: 10px; /* Add margin to separate the logo from the text */
+          margin-bottom: 20px; /* Add margin to separate the logo from the text */
         }
 
         footer a {
@@ -167,7 +167,6 @@
     <div class="banner-overlay">
       <div class="header-content">
         <h1 class="banner-title">Should You Drop Out?</h1>
-        <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
       </div>
     </div>
   </header>  
@@ -190,55 +189,233 @@
       <p>Welcome to the fascinating world behind the scenes of our research endeavor. In this section, we delve into the code-intensive aspects that underpin the reliability of our findings and methodologies. Our team of authors, committed to ensuring a diversity of ideas and perspectives, has diligently divided the tasks involved. This meticulous approach guarantees a comprehensive exploration, free from any biases that may hinder the integrity of our research.</p>
       <span style="font-style: italic; color: #999999;">The <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/tree/main/notebooks">notebooks</a> of our repository has been organised in order to provide different aspects and steps in our research and do not necessarily reflect the order of neither this page nor the analysis one.</span>
     </section>  
-      <h3>1) Data Collection</h3>
+      <h3>1) Data Collection: Unveiling the Building Blocks</h3>
       <section>
         <p>Our main and initial source was the <a href="https://www.census.gov/"> Census.gov </a> API, a treasure trove of comprehensive data capturing various variables that illuminate the intricacies of US society. To kick-start our research, we accessed the API's JSON file using the provided API Key. This invaluable resource furnished us with crucial information on the percentage of educational attainment and the number of educational firms across different counties. </p>
-        <section style="text-align: center;">
-          <img src="fig12.png" alt="Fig 12" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-        </section> 
+        <section>
+          <code style="display: block; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+            <span style="color: #008000">#Setting up the API Query parameters for the educational services industry</span>
+            <span style="color: #0000ff">params1</span> = {<span style="color: #a31515">"NAICS2017"</span>: <span style="color: #800080">61</span>}
+            <br><br>
+            <span style="color: #008000">#Requesting the json file from the census website using the api key</span>
+            <span style="color: #0000ff">url</span> = <span style="color: #a31515">"https://api.census.gov/data/2017/ecnbasic?get=NAICS2017_LABEL,NAICS2017,GEO_ID,FIRM&for=county:*&key={}".format(api_key)</span>
+            <span style="color: #0000ff">response</span> = <span style="color: #0000ff">requests</span>.<span style="color: #0000ff">request</span>(<span style="color: #a31515">"GET"</span>, <span style="color: #0000ff">url</span>, <span style="color: #0000ff">params</span>=<span style="color: #0000ff">params1</span>)
+          </code>
+        </section>
+        
+
+        
         <p>To streamline our analysis, we converted the obtained data into a Pandas data frame, facilitating a more organized and user-friendly format.</p>
         <p>In addition to the Census.gov API, we incorporated other valuable sources available in CSV or Excel formats. Leveraging the versatility of the Pandas library, we seamlessly imported and processed these files for further examination.</p>
-        <img src="fig13.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+        <section>
+          <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+            <span style="color: #0000ff">import</span> pandas <span style="color: #0000ff">as</span> pd
+            <br>
+            <span style="color: #008000">#import excel file and convert to dataframe</span>
+            us_gdp = pd.<span style="color: #0000ff">read_excel</span>(<span style="color: #a31515">"../data/us_gdp_2009-18.xlsx"</span>)
+            <br><br>
+            <span style="color: #008000"># if GeoFIPS is under 10000, add a 0 in front of it</span>
+            us_gdp[<span style="color: #a31515">'Clean GeoFIPS'</span>] = us_gdp[<span style="color: #a31515">'Clean GeoFIPS'</span>].<span style="color: #0000ff">apply</span>(<span style="color: #0000ff">lambda</span> x: '<span style="color: #a31515">{0:0>5}</span>'.<span style="color: #0000ff">format</span>(x))
+            <br><br>
+            <span style="color: #008000">#convert GeoFIPS to string</span>
+            us_gdp[<span style="color: #a31515">'Clean GeoFIPS'</span>] = us_gdp[<span style="color: #a31515">'Clean GeoFIPS'</span>].<span style="color: #0000ff">astype</span>(<span style="color: #a31515">'string'</span>)
+            <br><br>
+            <span style="color: #008000">#keep only Clean GEOFIPS and GDP per Capita 2017</span>
+            us_gdp = us_gdp[[<span style="color: #a31515">'Clean GeoFIPS'</span>, <span style="color: #a31515">'GDP per Capita 2017'</span>]]
+            <br><br>
+            <span style="color: #008000">#rename Clean GeoFIPS to GEO_ID</span>
+            us_gdp = us_gdp.<span style="color: #0000ff">rename</span>(<span style="color: #0000ff">columns</span>=<span style="color: #0000ff">{'Clean GeoFIPS': 'GEO_ID'}</span>)
+            <br><br>
+            us_gdp.<span style="color: #0000ff">head</span>(5)
+          </code>
+        </section>
+        
 
       </section>    
-      <h3>2) Data Cleaning</h3>
+      <h3>2) Data Cleaning: Shaping the Foundation</h3>
       <p>To establish a solid foundation for our analysis, we undertook meticulous data cleaning procedures. We pruned unnecessary columns, focusing solely on California's data for our initial exploration. The following steps outline our data cleaning process for the American Community Survey (ACS) survey database:
       </p>
-      <img src="fig14.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-    
-      <p>Next, we changed the variable types from the ECS Census Database and prepared it to be merged with the other pandas dataframe from the Bureau of Economic data.</p>
-      
-      <h3>3) Data Merging</h3>
-      <p>Based on these two datasets, from the economic and the American Community Survey Census, we merged them and selected California as the first state we were going to take a look at. To avoid possible sources of conflicting data we chose 2017 for both of these census.</p>
-      <img src="fig15.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-      <p>The first merge was between the two previously mentioned Census databases based on the county number. We encountered some difficulties as the ECS dataset included more counties than the ACS dataset (48 compared to 40, respectively, for the California state). However, with the given county sample, we were still able to explore trends in California. </p>
-      
-      <h3>4) Transforming our Data</h3>
-      <p>Furthermore, we realized that the US government uses two similar codes on its data to classify each county, GEO_ID and and GEO_FIPS. Thus, we changed the GEO_FIPS column on our merged census pandas dataframe to match the GEO_ID data.</p>
-      <img src="fig16.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-      <p>This made it possible for us to another dataset which contained National Income from 2009 to 2018 per county based on its GEO_ID. Meaning we could merge it with our pandas dataset which contains info on educational institutions and Percentage of those with a Bachelor’s degree in each county based on the GEO_ID Column. </p>
-      <img src="fig17.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-      <p>With all of this so far, we have been able to create a pandas data frame containing data on each county on education and income using GEO_ID to quickly identify them.</p>
-      
-      <h3>5) Data Visualization</h3>
-      <p>We created scatter plots to easily visualize and identify possible trends between education and salary.</p>
-      <p> <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb"> Notebook 5 </a> features scatterplots for all US states, showcasing their GDP per Capita plotted against the Percent of Population with  a Bachelor’s degree. The following code was used to create these plots.</p>
-      <img src="fig18.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-      <p>Further analysis required identifying the counties with the highest values of GDP per Capita and Percent of Population with a Bachelor’s degree. As you can see below, the original dataframe was sorted into two separate data frames with the 25 highest x and y-values, respectively. The code for the scatterplot was modified to include labels for these counties, showing the US state from which they belong to. </p>
-      <img src="fig19.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-      <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb">Notebook 5 </a> we also found the states with counties that were amongst the highest GDP per Capita’s and Education Attainment. Below, the ‘common_values’ set is used to store these states and eliminate duplicates. It is then converted to a list, and then the states extrapolated from their numbers using the data frame created in <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB2%20Creation%20of%20a%20final%20Data%20Frame.ipynb"> Notebook 2 </a> .</p>
-      <img src="fig20.png" alt="Fig 3" style="width: 50%; max-width: 800px; display: block; margin: 0 auto;">
-    
       <section>
-        <h3>6) Forecasting</h3>
-        <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/main/notebooks/NB3%20Forecasting.ipynb"> Notebook 3</a> we only focus on the forecasting of the education and GDP trends. To do such analysis we used longer temporal data frames that could picture the situation in the US in the past. The economic data is retrieved from the World Bank, while the college percentage is retrieved from a .xlsx file from the Census.gov. We opened the data and we plotted it out. We had to be careful with the units of measurements. In the first case, for the GDP, the levels were ranging from 200 000 to 600 000, while in the second, the percentages were shifting from 5 to 40. After that, we immediately noticed a positive trend in both elements, as we noted in the analysis. The actual forecast was made through the "Prophet" library, that automatically generates a forecast for the period set. The graph generated shows the forecast with a upper and lower error margin. Before that, we made sure to adapt the data frame to the requirements of the library, i.e. renaming the date to "ds" (after having transformed it to date-time format) and y as the variable.</p>
-        <img src="fig21.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-        <p>We also decided to plot out a line on the year 2020 to highlight the pandemic effects. The code follows.</p>
-        <img src="fig22.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
-        <p>Lastly, we merged once again the two forecasts to obtain a single final merged plot, as shown below.</p>
-        <img src="fig23.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+        <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+          <span style="color: #008000">#Merging the two datasets</span>
+          merged_census = pd.<span style="color: #0000ff">merge</span>(df_educationservices, df_perc_bach, on='county')
+          <br><br>
+          <span style="color: #008000">#drop state_y column and rename state_x to state</span>
+          merged_census = merged_census.drop(columns=['state_y', 'NAICS2017'])
+          merged_census = merged_census.rename(columns={'state_x': 'state', 'FIRM':'Number of Educational Institutions','DP02_0064PE':'Percent of Population with a Bachelor\'s Degree'})
+          <br><br>
+          <span style="color: #008000">#Convert the columns to the correct data types</span>
+          merged_census['Percent of Population with a Bachelor\'s Degree'] = merged_census['Percent of Population with a Bachelor\'s Degree'].astype(float)
+          merged_census['county'] = merged_census['county'].astype(int)
+          <br><br>
+          <span style="color: #008000"># The last two columns are currently unneeded but will be later used for contextual analysis.</span>
+          <br>
+          <span style="color: #008000">#Drop the last two columns</span>
+          merged_census = merged_census.drop(columns=['DP02_0088PE', 'DP02_0123PE'])
+          merged_census.<span style="color: #0000ff">head</span>()
+        </code>
+      </section>      
+    
+      <p>In our quest to merge datasets seamlessly, we harmonized the variable types from the ECS Census Database. This critical step ensured compatibility and facilitated the subsequent merging with the Bureau of Economic data.</p>
+      
+      <h3>3) Data Merging: Forging Connections</h3>
+      <p>By fusing the economic and American Community Survey Census datasets, we ventured into a realm of interconnected insights. Our primary focus was California, and to ensure consistency and minimize conflicting data, we meticulously selected the year 2017 for both census sources.</p>
+      <section>
+        <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+          <span style="color: #008000">#Merging the two datasets</span>
+          merged_census = pd.<span style="color: #0000ff">merge</span>(df_california1, df_california2, on='county')
+          <br><br>
+          <span style="color: #008000">#drop state_y column and rename state_x to state</span>
+          merged_census = merged_census.drop(columns=['state_y', 'NAICS2017'])
+          merged_census = merged_census.rename(columns={'state_x': 'state', 'FIRM':'Number of Educational Institutions','DP02_0064PE':'Percent of Population with a Bachelor\'s Degree'})
+          <br><br>
+          <span style="color: #008000">#Convert the columns to the correct data types</span>
+          merged_census['Percent of Population with a Bachelor\'s Degree'] = merged_census['Percent of Population with a Bachelor\'s Degree'].astype(float)
+          merged_census['county'] = merged_census['county'].astype(int)
+          <br><br>
+          <span style="color: #008000"># The last two columns are currently unneeded but will be later used for contextual analysis.</span>
+          <br>
+          <span style="color: #008000">#Drop the last two columns</span>
+          merged_census = merged_census.drop(columns=['DP02_0088PE', 'DP02_0123PE'])
+        </code>
+      </section>      
+      <p>Navigating Obstacles: Overcoming County Discrepancies
+        During the merging process, we encountered certain challenges. The ECS dataset encompassed more counties (48) compared to the ACS dataset (40) for the state of California. Despite this discrepancy, our resourcefulness allowed us to extract meaningful trends and patterns within California's available county sample.</p>
+      
+      <h3>4) Transforming our Data: Unleashing the Power of Integration</h3>
+      <p>Realizing the existence of two similar county identification codes, GEO_ID and GEO_FIPS, within US government data, we harmonized our merged census data frame. Specifically, we modified the GEO_FIPS column to match the GEO_ID data, opening new avenues for further analysis.</p>
+      <section>
+        <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+          <span style="color: #008000">#Create a copy of merged_census called education_data</span>
+          education_data = merged_census.<span style="color: #0000ff">copy</span>()
+          <br><br>
+          <span style="color: #008000">#Working on the GEO_ID column: keep only the code after 0500000US</span>
+          education_data['GEO_ID'] = education_data['GEO_ID'].str.<span style="color: #0000ff">split</span>('US').str[1]
+          education_data.<span style="color: #0000ff">head</span>()
+        </code>
+      </section>      
+      <p>Creating a Comprehensive Landscape: County-level Insights
+        Harnessing the potential of the GEO_ID column, we successfully integrated another dataset containing National Income from 2009 to 2018 per county. This integration enabled us to enrich our pandas data frame with essential information on educational institutions and the percentage of individuals holding a Bachelor's degree across each county. </p>
+        <section>
+          <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+            <span style="color: #008000">#Merge the gdp dataframe with the education_data dataframe</span>
+            gdp_and_census = pd.<span style="color: #0000ff">merge</span>(education_data, us_gdp, on='GEO_ID')
+            gdp_and_census.<span style="color: #0000ff">head</span>(20)
+          </code>
+        </section>        
+
+      <h3>5) Data Visualization: Unveiling Patterns and Trends</h3>
+      <p>Visualization played a pivotal role in our quest to unravel hidden relationships between education and salary. Utilizing scatter plots, we effortlessly identified potential trends and patterns, enabling a more intuitive understanding of the data.</p>
+      <p> With <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb"> Notebook 5 </a>, we crafted scatter plots depicting the GDP per Capita versus the Percent of Population with a Bachelor's degree for all US states. This comprehensive visual exploration allowed us to identify key insights across the nation. The accompanying code snippet showcases the process behind generating these enlightening visualizations.</p>
+      <section>
+        <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+          <span style="color: #008000"># Import required libraries</span><br>
+          <span style="color: #0000ff">import</span> pandas <span style="color: #0000ff">as</span> pd<br>
+          <span style="color: #0000ff">from</span> plotnine <span style="color: #0000ff">import</span> ggplot, aes, geom_point, labs, theme, element_text, element_rect<br>
+          <br>
+          <span style="color: #008000"># Define desired values</span><br>
+          desired_values = range(1, 51)<br>
+          <br>
+          <span style="color: #008000"># Initialize correlation data dictionary</span><br>
+          correlation_data = {'State': [], 'Correlation Coefficient': []}<br>
+          <br>
+          <span style="color: #008000"># Loop through each desired value</span><br>
+          <span style="color: #0000ff">for</span> desired_value <span style="color: #0000ff">in</span> desired_values:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000"># Filter the data based on the condition</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;filtered_data = df[df['state'] == desired_value]<br>
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0000ff">if</span> <span style="color: #0000ff">not</span> filtered_data.empty:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000"># Calculate the correlation coefficient</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correlation_coefficient = filtered_data["Percent of Population with a Bachelor's Degree"].corr(filtered_data["GDP per Capita 2017"])<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correlation_text = f"Correlation: {correlation_coefficient:.2f}"<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correlation_data['State'].append(desired_value)<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;correlation_data['Correlation Coefficient'].append(correlation_coefficient)<br>
+                  <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000"># Create and customize the plot</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot = (ggplot(filtered_data, aes(x="Percent of Population with a Bachelor's Degree", y="GDP per Capita 2017")) +<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;geom_point() +<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labs(x="Percent of Population with a Bachelor's Degree", y="GDP per Capita 2017", title=correlation_text)) + \<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme(text=element_text(family='DejaVu Sans',<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size=9, color='black', face='italic'),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axis_title=element_text(face='bold'),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;axis_text=element_text(face='italic'),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plot_title=element_text(face='bold',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size=12)) + \<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme(panel_border=element_rect(linewidth=0.5, color='black', fill=None))<br>
+              <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000"># Display the plot</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(plot)<br>
+        </code>
       </section>
-     
+      
+      
+      <p><strong>Unveiling the Pinnacle: Counties of Distinction</strong></p>
+        Further analysis involved identifying the counties with the highest GDP per Capita and Percent of Population with a Bachelor's degree. Our sorting process yielded two distinct data frames, each comprising the top 25 counties for these respective variables. The updated scatterplot code incorporated county labels, accentuating their origin within the corresponding US state. </p>
+      <img src="fig19.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+      <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb">Notebook 5 </a> we also found the states with counties that were amongst the highest GDP per Capita’s and Education Attainment. Below, the ‘common_values’ set is used to store these states and eliminate duplicates. It is then converted to a list, and the states extrapolated from their numbers using the data frame created in <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB2%20Creation%20of%20a%20final%20Data%20Frame.ipynb"> Notebook 2 </a> .</p>
+      <img src="fig20.png" alt="Fig 3" style="width: 50%; max-width: 800px; display: block; margin: 0 auto;">
+
+      <section></section>
+      <section>
+        <h3>6) Forecasting: Peering into the Future</h3>
+        <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/main/notebooks/NB3%20Forecasting.ipynb"> Notebook 3</a>, our primary focus revolves around forecasting education and GDP trends. To conduct this analysis, we utilized comprehensive historical data sets that effectively captured the past situation in the United States. The economic data was sourced from the World Bank, while the college percentage figures were obtained from a .xlsx file provided by Census.gov. We diligently processed and visualized the data, taking particular care to ensure accurate units of measurement were maintained.</p>
+       <p>
+        In the case of GDP, the levels ranged from 200,000 to 600,000, while the college percentages varied from 5 to 40. Upon thorough analysis, we immediately observed a positive trend present in both variables. To generate accurate forecasts, we employed the "Prophet" library, which automatically generates forecasts within a specified time frame. The resulting graph showcases the forecasted values, along with upper and lower error margins.
+       </p>
+       <p>Before proceeding with the forecasting process, we meticulously prepared the data frame to meet the library's requirements. This involved renaming the date column as "ds" after converting it to a date-time format, and designating the variable of interest as "y." These preparatory steps ensured seamless integration with the forecasting library and facilitated accurate predictions.</p>
+       <section>
+        <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+          <span style="color: #008000"># In the GDP data keep only year and GDP per capita (constant 2015 US$) and rename these as DS and Y respectively</span><br>
+          gdp_us_time = gdp_us_time[['Year', 'GDP per capita (constant 2015 US$)']]<br>
+          gdp_us_time.columns = ['ds', 'y']<br>
+          <br>
+          <span style="color: #008000"># Transform the DS column into datetime format</span><br>
+          gdp_us_time['ds'] = pd.to_datetime(gdp_us_time['ds'], format='%Y')<br>
+          <br>
+          gdp_us_time.head()<br>
+        </code>
+      </section>      
+        <p><strong>Illuminating the Pandemic:</strong> Highlighting a Historic Event
+          Recognizing the profound impact of the COVID-19 pandemic, we incorporated a visual element to underscore its effects on education and the economy. By plotting a prominent line representing the year 2020, we drew attention to this unprecedented event and its repercussions on the observed trends.</p>
+          <section>
+            <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+              <span style="color: #008000"># Plot the forecast with the labels year and GDP per capita (constant 2015 US$)</span><br>
+              fig1 = m.plot(gdp_forecast)<br>
+              ax = fig1.gca()<br>
+              ax.set_xlabel('Year')<br>
+              ax.set_ylabel('US GDP per capita (constant 2015 US$)')<br>
+              <br>
+              <span style="color: #008000"># Add a line on 2020 with a legend</span><br>
+              plt.axvline(x='2020-01-01', color='red', linestyle='--')<br>
+              plt.text('2020-01-01', 50000, '2020', rotation=270)<br>
+              plt.show()<br>
+            </code>
+          </section>
+          
+        <p><strong>Synthesizing the Journey: </strong>A Cohesive Narrative
+          To consolidate our findings, we merged the two forecasts, weaving together a comprehensive visual narrative. This final merged plot provided a panoramic view of the projected educational and economic landscape.</p>
+          <section>
+            <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+              <span style="color: #008000"># Plot the two forecasts together</span><br>
+              fig, ax1 = plt.subplots()<br>
+              ax1.plot(gdp_forecast['ds'], gdp_forecast['yhat'], color='red')<br>
+              ax1.set_xlabel('Year')<br>
+              ax1.set_ylabel('GDP per capita (constant 2015 US$)', color='red')<br>
+              ax1.tick_params('y', colors='red')<br>
+              ax2 = ax1.twinx()<br>
+              ax2.plot(ed_forecast['ds'], ed_forecast['yhat'], color='blue')<br>
+              ax2.set_ylabel('College Percentage', color='blue')<br>
+              ax2.tick_params('y', colors='blue')<br>
+              fig.tight_layout()<br>
+              <br>
+              <span style="color: #008000"># Add a line to denote the year 2023 and write 2023 next to it</span><br>
+              plt.axvline(x='2023-01-01', color='black', linestyle='--')<br>
+              plt.text('2023-01-01', 15, '2023', rotation=270)<br>
+              plt.show()<br>
+            </code>
+          </section>          
+        <p>Embarking on this research journey allowed us to uncover valuable insights into the intricate relationship between education and economic indicators. Through meticulous data collection, cleaning, merging, and visualization, we unraveled hidden patterns and forecasted future trends. Our commitment to rigorous methodologies and open exploration shines through each step, ensuring the reliability and robustness of our findings.
+        </p>
 
       <h3>7) Unleashing the Web: Alua's Journey of Learning HTML and CSS</h1>
 
@@ -263,11 +440,29 @@
         <li>Personal Portfolio: Building a personal website will serve as a platform to showcase my academic achievements, skills, and projects. By applying responsive design and creative layout techniques, I can leave a lasting impression on potential employers and collaborators.</li>
         <li>Collaborative Projects: Collaborating with fellow students and professionals, I can contribute to the design and development of websites, bridging the gap between data-driven insights and user experience. This multidisciplinary approach will foster innovation and generate impactful solutions.</li>
       </ol>
-      <p>My journey of learning HTML and CSS has been both challenging and rewarding. Overcoming the hurdles, I have acquired a powerful set of skills that will enable me to communicate complex economic ideas effectively, unlock</p>
-  </main>
-  <footer>
-    <p style="margin-top: 50px;">2023 Data Detectives</p>
-    <img src="London_School_of_Economics-Logo.wine.png" alt="Logo" class="logo">
-  </footer>
+      <p>My journey of learning HTML and CSS has been both challenging and rewarding. Overcoming the hurdles, I have acquired a powerful set of skills that will enable me to communicate complex economic ideas effectively, unlock new career opportunities, and create engaging user experiences. With a solid foundation in HTML and CSS, I am excited to embark on academic projects, build my personal portfolio, and collaborate on impactful ventures. The fusion of data science, economics, and web design has equipped me with a unique skill set that will undoubtedly shape my future endeavors. As I leverage this newfound knowledge, I am eager to explore the endless possibilities and make a meaningful impact in the digital realm.</p>
+      
+      <section>
+        <h3>8) Key Issues and Challenges</h3>
+        <ol style="margin-left: 20px;">
+          <li>Diversity in Educational Attainment Across Counties</li>
+            <ol type="a">
+              <li>While analyzing data from the Census Bureau, we discovered variations in the percentages of educational attainment among different counties.</li>
+              <li>To address this issue, we developed a methodology to handle cases where multiple rows contained the same county and state code. We calculated the average percentage and consolidated the information into a single row.</li>
+            </ol>
+          <li>Data Discrepancies and Their Interpretation</li>
+            <ol type="a">
+              <li>During our analysis, we observed a significant reduction in the number of rows when transitioning from one dataset to another.</li>
+              <li>While this may initially appear problematic, it is worth considering that it may reflect the reality that certain counties lack educational institutions.</li>
+              <li>As a result, our research focuses on 1393 counties, instead of the original count of 3143, as we deemed the available data to be reliable and representative.</li>
+            </ol>
+        </ol>      
+      </section>
+  
+    </main>
+    <footer>
+      <p style="margin-top: 30px;">2023 Data Detectives</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/LSE_Logo.svg/638px-LSE_Logo.svg.png?20110331145302" alt="Logo" class="logo" style="max-width: 25px; height: auto;">
+    </footer>  
 </body>
 </html>
