@@ -254,7 +254,8 @@
           merged_census = merged_census.drop(columns=['DP02_0088PE', 'DP02_0123PE'])
           merged_census.<span style="color: #0000ff">head</span>()
         </code>
-      </section>      
+      </section>
+       
     
       <p>In our quest to merge datasets seamlessly, we harmonized the variable types from the ECS Census Database. This critical step ensured compatibility and facilitated the subsequent merging with the Bureau of Economic data.</p>
       
@@ -351,11 +352,52 @@
       
       <p><strong>Unveiling the Pinnacle: Counties of Distinction</strong></p>
         Further analysis involved identifying the counties with the highest GDP per Capita and Percent of Population with a Bachelor's degree. Our sorting process yielded two distinct data frames, each comprising the top 25 counties for these respective variables. The updated scatterplot code incorporated county labels, accentuating their origin within the corresponding US state. </p>
-      <img src="fig19.png" alt="Fig 3" style="width: 70%; max-width: 800px; display: block; margin: 0 auto;">
+        <section>
+          <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+            <span style="color: #008000"># Sort the DataFrame based on "Percent of Population with a Bachelor's Degree" in descending order</span><br>
+            df_sorted = df.sort_values("Percent of Population with a Bachelor's Degree", ascending=False)<br>
+            df_sorted2 = df.sort_values("GDP per Capita 2017", ascending=False)<br>
+            <br>
+            <span style="color: #008000"># Get the top 25 rows based on the sorted DataFrame</span><br>
+            top_25 = df_sorted.head(25)<br>
+            <br>
+            <span style="color: #008000"># Plot the scatter plot with labels and size scaling</span><br>
+            plot = (ggplot(df, aes(x="Percent of Population with a Bachelor's Degree", y="GDP per Capita 2017")) +<br>
+                    geom_point(alpha=0.3) +<br>
+                    scale_size(range=[2, 10]) +<br>
+                    geom_text(aes(label='state'), size=5.5, data=top_25, nudge_y=6) +<br>
+                    geom_text(aes(label='state'), size=5.5, data=top_25_2, nudge_x=0, nudge_y=labs(x="Percent of Population with a Bachelor's Degree", y="GDP per Capita 2017", size="Number of Educational Institutions", title="All US Counties")) +<br>
+                    theme(text=element_text(family="Dejavu Sans", size=9, color='black', face='italic'),<br>
+                          axis_title=element_text(face='bold'),<br>
+                          axis_text=element_text(face='italic'),<br>
+                          plot_title=element_text(face='bold', size=12)) +<br>
+                    scale_x_continuous(limits=(0, 100)) +<br>
+                    theme(panel_border=element_rect(linewidth=0.5, color='black', fill=None))<br>
+                   )<br>
+            <br>
+            <span style="color: #008000"># Print the plot with adjusted coordinate limits</span><br>
+            print(plot + coord_cartesian(xlim=(2, 40), ylim=(4, 200)))<br>
+          </code>
+        </section>
+        
       <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB5%20County%20Level%20Analysis.ipynb">Notebook 5 </a> we also found the states with counties that were amongst the highest GDP per Capita’s and Education Attainment. Below, the ‘common_values’ set is used to store these states and eliminate duplicates. It is then converted to a list, and the states extrapolated from their numbers using the data frame created in <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/1bb90d2974ce89b07b19217100f7fc7b760c96df/notebooks/NB2%20Creation%20of%20a%20final%20Data%20Frame.ipynb"> Notebook 2 </a> .</p>
-      <img src="fig20.png" alt="Fig 3" style="width: 50%; max-width: 800px; display: block; margin: 0 auto;">
-
-      <section></section>
+      <section>
+        <code style="display: block; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5; margin: 0 auto; max-width: 800px;">
+          <span style="color: #008000"># Find common values in the 'state' column of the top 25 rows</span><br>
+          common_values = set()<br>
+          <br>
+          <span style="color: #008000"># Iterate over each value in the 'state' column</span><br>
+          for value in top_25['state']:<br>
+              <span style="margin-left: 4em;">if value in top_25['state'].values:</span><br>
+                  <span style="margin-left: 8em;">common_values.add(value)</span><br>
+          <br>
+          <span style="color: #008000"># Convert the set to a list</span><br>
+          common_values = list(common_values)<br>
+          <br>
+          common_values
+        </code>
+      </section>
+      
       <section>
         <h3>6) Forecasting: Peering into the Future</h3>
         <p>In <a href="https://github.com/leomassoc/LSE-DS105L-Data-Detectives/blob/main/notebooks/NB3%20Forecasting.ipynb"> Notebook 3</a>, our primary focus revolves around forecasting education and GDP trends. To conduct this analysis, we utilized comprehensive historical data sets that effectively captured the past situation in the United States. The economic data was sourced from the World Bank, while the college percentage figures were obtained from a .xlsx file provided by Census.gov. We diligently processed and visualized the data, taking particular care to ensure accurate units of measurement were maintained.</p>
