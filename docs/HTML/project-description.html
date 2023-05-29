@@ -7,6 +7,7 @@
     body {
       font-family: Arial, sans-serif;
       line-height: 1.5;
+      text-align: justify;
       margin: 0;
       padding: 0;
       background-color: #f5f5f5;
@@ -79,6 +80,18 @@
           margin-top: 0px;
           margin-bottom: 0px; /* Adjust the margin-bottom value to reduce the space */
           filter: brightness(1.2); /* Increase brightness */
+        }
+       
+        .cut-iframe {
+        width: 250px; /* Adjust this value as needed */
+        margin: 0 auto; /* Center the iframe horizontally */
+        overflow: hidden;
+        float: left
+        }
+
+        .cut-iframe iframe {
+            margin-left: -110px; /* Adjust this value as needed */
+            filter: contrast(150%) opacity(0.7);
         }
 
         header .logo {
@@ -195,7 +208,7 @@
       </p>
       <h3>Motivation</h3>
       <p>
-        Driven by an insatiable curiosity and a desire to demystify the nexus between education and career trajectories, our team embarked on an ambitious research endeavor. We set out to meticulously analyze the profound impact of education, specifically focusing on the percentage of individuals who have obtained a Bachelor's degree, within the United States. Recognizing the accessibility and abundance of relevant data provided by the Census database through API queries and csv files, we found the perfect avenue to explore this captivating subject.
+        <img src="Motivation.jpg" style="width: 30%; float: right; margin: 0 0 1em 2em;">        Driven by an insatiable curiosity and a desire to demystify the nexus between education and career trajectories, our team embarked on an ambitious research endeavor. We set out to meticulously analyze the profound impact of education, specifically focusing on the percentage of individuals who have obtained a Bachelor's degree, within the United States. Recognizing the accessibility and abundance of relevant data provided by the Census database through API queries and csv files, we found the perfect avenue to explore this captivating subject.
       </p>
       <p>
         However, in our relentless pursuit of precision and credibility, we expanded our data sources beyond the Census database. With an unwavering commitment to rigorous fact-checking and reliability control, we sought to compile a comprehensive body of evidence that would stand up to scrutiny. Our objective was to ensure that our findings not only offered valuable insights but also presented an accurate reflection of reality.
@@ -204,8 +217,7 @@
         As we strive to present our research in a cohesive and engaging manner, we acknowledge that no study is without limitations. With this in mind, we invite you to delve deeper into the intricacies of our methodology and the challenges we encountered on our research journey. Our dedicated "Behind the Scenes" page offers a transparent and enlightening glimpse into our meticulous process.
       </p>
       <p>With great enthusiasm, we extend a warm welcome to our DS105L group project by Data Detectives. Join us as we embark on a captivating exploration into the significance of education in shaping professional success. Together, let us unravel the complex tapestry woven by education, income, and societal equality, and unveil the truths that lie at the heart of this fascinating research endeavor.
-      </p>
- 
+      </p>      
     </section>
 
     <section>
@@ -217,9 +229,12 @@
         The relationship between education and income has been a focal point of extensive research within the social sciences. Scholars have employed diverse methodologies in their quest to unravel the intricate dynamics of this connection. In our quest to contribute to this body of knowledge, we draw upon the invaluable insights offered by various researchers who have paved the way before us.
       </p>
       <p>
-        Our motivation is rooted in the <strong> human capital theory </strong>, which forms the bedrock of our hypothesis. This influential theory posits that education represents an investment in an individual's human capital—a concept encompassing their knowledge, skills, and abilities. According to this theory, such investments can catalyze higher wages and unlock greater earning potential over one's lifetime. In essence, education is deemed a key determinant of an individual's income, with higher levels of education correlating with higher levels of income.
+        Our motivation is rooted in the <strong> human capital theory</strong>, which forms the bedrock of our hypothesis. This influential theory posits that education represents an investment in an individual's human capital—a concept encompassing their knowledge, skills, and abilities. According to this theory, such investments can catalyze higher wages and unlock greater earning potential over one's lifetime. In essence, education is deemed a key determinant of an individual's income, with higher levels of education correlating with higher levels of income.
       </p>
       <p>
+        <div class="cut-iframe">
+          <iframe src="https://giphy.com/embed/Q62Wvuma3vPA7WLiOO" width="480" height="250" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>   
         While regression analysis serves as a commonly utilized method to estimate the relationship between education and income, we acknowledge the inherent challenges in controlling for every potential confounder. Hence, in our pursuit of comprehensive insights, we turn to correlation analysis. By examining the strength of the relationship between education and income, we aim to capture a nuanced understanding of their interplay.
       </p>
       <p>
