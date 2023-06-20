@@ -10,7 +10,7 @@ We decided to analyse the impact that education has on individuals' salary: is i
 
 # 👥 **Team** 
 
-🛠️ [Alberto](https://github.com/amartino1-lse) mainly focused on data wrangling and merging. 
+🛠️ [Alberto](https://github.com/alberto-martino) mainly focused on data wrangling and merging. 
 
 ✍️ [Alua](https://github.com/atelemtayeva) created the website, learning HTML on her own! 
 
